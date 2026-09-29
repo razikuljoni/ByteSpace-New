@@ -5,6 +5,7 @@ import { FeaturedCourses } from "@/components/home/FeaturedCourses";
 import { LearningPaths } from "@/components/home/LearningPaths";
 import { AboutSection } from "@/components/home/AboutSection";
 import { CreatorCTA } from "@/components/home/CreatorCTA";
+import { Testimonials } from "@/components/home/Testimonials";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <LearningPaths />
         <AboutSection />
         <CreatorCTA />
+        <Testimonials />
       </main>
     </div>
   );
