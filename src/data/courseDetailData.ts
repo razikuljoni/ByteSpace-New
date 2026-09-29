@@ -11,6 +11,12 @@ export interface CourseInclusion {
   text: string;
 }
 
+export interface CourseModuleItem {
+  moduleNumber: string;
+  title: string;
+  description: string;
+}
+
 export interface CourseDetailData {
   id: string;
   title: string;
@@ -33,7 +39,48 @@ export interface CourseDetailData {
   descriptionParagraphs: string[];
   sneakPeakImages: string[];
   keyPoints: string[];
+  modules?: CourseModuleItem[];
+  learningProgress?: number;
 }
+
+export const DEFAULT_MODULES: CourseModuleItem[] = [
+  {
+    moduleNumber: "Module 1",
+    title: "Introduction to Digital Assets",
+    description:
+      "Lay the groundwork with lessons like 'Understanding Digital Elements' and 'Navigating Design Software Tools'. Dive into the essentials of digital asset creation.",
+  },
+  {
+    moduleNumber: "Module 2",
+    title: "Design Principles for Impact",
+    description:
+      "Master the principles that drive impactful designs with lessons such as 'Color Theory in Digital Design' and 'Typography Essentials'. Elevate your visual communication skills.",
+  },
+  {
+    moduleNumber: "Module 4",
+    title: "User-Centric Design Strategies",
+    description:
+      "Understand 'Design Thinking in Digital Creation' and delve into 'User Experience (UX) Essentials'. Craft digital assets with a focus on user-centric design.",
+  },
+  {
+    moduleNumber: "Module 5",
+    title: "Interactive Media and Engagement",
+    description:
+      "Engage your audience with lessons like 'Creating Interactive Presentations' and 'Integrating Multimedia Elements'. Master the art of creating immersive digital experiences.",
+  },
+  {
+    moduleNumber: "Module 6",
+    title: "Project Showcase and Critique",
+    description:
+      "Reflect your presentation skills with 'Effective Presentation Techniques' and embrace collaboration with 'Peer Critique and Collaboration'. Showcase your work with confidence.",
+  },
+  {
+    moduleNumber: "Module 7",
+    title: "Optimizing Digital Assets for Various Platforms",
+    description:
+      "Adapt your digital creations for 'Mobile Platforms' and optimize for 'Social Media'. Ensure widespread accessibility and engagement across diverse digital landscapes.",
+  },
+];
 
 export const COURSE_DETAILS_MAP: Record<string, CourseDetailData> = {
   "build-digital-asset": {
@@ -97,6 +144,8 @@ export const COURSE_DETAILS_MAP: Record<string, CourseDetailData> = {
       "Monetization Strategies",
       "Capstone Project: Building Your Portfolio",
     ],
+    learningProgress: 55,
+    modules: DEFAULT_MODULES,
   },
   "course-1": {
     id: "course-1",
@@ -371,6 +420,8 @@ export function getCourseDetailById(id: string): CourseDetailData {
         "Monetization & Client Acquisition",
         "Final Capstone Showcase Project",
       ],
+      learningProgress: 55,
+      modules: DEFAULT_MODULES,
     };
   }
 
