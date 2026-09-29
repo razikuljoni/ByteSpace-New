@@ -54,13 +54,13 @@ export function Navbar() {
         {/* Desktop Auth & Cart */}
         <div className="hidden items-center gap-6 md:flex">
           <Link
-            href="/signin"
+            href="/login"
             className="font-sans text-sm font-medium text-white/90 transition-colors hover:text-white"
           >
             Sign In
           </Link>
           <Link
-            href="/join"
+            href="/register"
             className="font-sans text-sm font-medium text-white/90 transition-colors hover:text-white"
           >
             Join Us
@@ -119,14 +119,14 @@ export function Navbar() {
             </Link>
             <div className="my-2 border-t border-white/10" />
             <Link
-              href="/signin"
+              href="/login"
               onClick={() => setMobileMenuOpen(false)}
               className="text-base font-medium text-white/80"
             >
               Sign In
             </Link>
             <Link
-              href="/join"
+              href="/register"
               onClick={() => setMobileMenuOpen(false)}
               className="bg-accent rounded-xl px-4 py-2.5 text-center text-sm font-semibold text-neutral-950"
             >
