@@ -9,6 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CourseDetailTabs } from "./CourseDetailTabs";
 import { CourseDetailSidebar } from "./CourseDetailSidebar";
 import { CourseDetailData } from "@/data/courseDetailData";
+import { getCreatorSlug } from "@/data/creators";
 
 interface CourseDetailLayoutProps {
   course: CourseDetailData;
@@ -43,7 +44,7 @@ export function CourseDetailLayout({ course, activeTab, children }: CourseDetail
             <p className="mt-2 text-xs text-white/80 sm:text-sm">
               by{" "}
               <Link
-                href="#instructor"
+                href={`/creators/${getCreatorSlug(course.author)}`}
                 className="font-medium text-white underline underline-offset-2 transition-opacity hover:opacity-80"
               >
                 {course.author}

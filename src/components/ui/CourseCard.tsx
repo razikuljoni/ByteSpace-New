@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Star } from "lucide-react";
 import { Course } from "@/types/course";
+import { getCreatorSlug } from "@/data/creators";
 
 interface CourseCardProps {
   course: Course;
@@ -58,7 +59,7 @@ export function CourseCard({ course, className = "", priority = false }: CourseC
               <p className="font-sans text-[12px] leading-[160%] text-[#4F4F4F]">
                 by{" "}
                 <Link
-                  href={course.authorUrl || "#"}
+                  href={`/creators/${getCreatorSlug(course.author)}`}
                   className="font-normal text-[#003BE2] transition-colors hover:underline"
                 >
                   {course.author}

@@ -71,7 +71,7 @@ export const COURSES: Course[] = [
   {
     id: "course-3",
     title: "the Power of Big Data",
-    author: "purepearl studio",
+    author: "devcraft academy",
     authorUrl: "#",
     rating: 4.5,
     lessonsCount: 17,
@@ -90,7 +90,7 @@ export const COURSES: Course[] = [
   {
     id: "course-4",
     title: "Balancing Productivity an...",
-    author: "purepearl studio",
+    author: "hypergrowth co",
     authorUrl: "#",
     rating: 4.5,
     lessonsCount: 17,
@@ -109,7 +109,7 @@ export const COURSES: Course[] = [
   {
     id: "course-5",
     title: "Mastering Money Manage...",
-    author: "purepearl studio",
+    author: "hypergrowth co",
     authorUrl: "#",
     rating: 4.5,
     lessonsCount: 17,
@@ -128,7 +128,7 @@ export const COURSES: Course[] = [
   {
     id: "course-6",
     title: "From Idea to Startup Succ...",
-    author: "purepearl studio",
+    author: "hypergrowth co",
     authorUrl: "#",
     rating: 4.5,
     lessonsCount: 17,
@@ -167,7 +167,7 @@ export const COURSES: Course[] = [
   {
     id: "course-music-2",
     title: "Acoustic Guitar Mastery",
-    author: "rhythm institute",
+    author: "soundcraft lab",
     authorUrl: "#",
     rating: 4.7,
     lessonsCount: 15,
@@ -287,7 +287,7 @@ export const COURSES: Course[] = [
   {
     id: "course-illustration-1",
     title: "Procreate Concept Art & Inking",
-    author: "sketchpad studio",
+    author: "atelier studio",
     authorUrl: "#",
     rating: 4.9,
     lessonsCount: 21,

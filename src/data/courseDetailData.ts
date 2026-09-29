@@ -1,4 +1,5 @@
 import { COURSES } from "./courses";
+import { getCreatorBySlug, getCreatorSlug } from "./creators";
 
 export interface PreviewLesson {
   number: string;
@@ -285,9 +286,9 @@ export const COURSE_DETAILS_MAP: Record<string, CourseDetailData> = {
     id: "course-3",
     title: "The Power of Big Data: Analytics & Modern Insights",
     subtitle: "Harness Data Visualization, Pipelines, and Machine Learning Fundamentals",
-    author: "purepearl studio",
-    authorRole: "Data Science Director",
-    authorAvatar: "/assets/images/about-instructor.png",
+    author: "devcraft academy",
+    authorRole: "Full-Stack Architect & Engineering Lead",
+    authorAvatar: "/assets/images/about-ellipse-9.png",
     level: "Advanced",
     rating: 4.8,
     reviewsCount: 156,
@@ -350,7 +351,7 @@ export const COURSE_DETAILS_MAP: Record<string, CourseDetailData> = {
     subtitle: "Ship Production Ready Fullstack Applications with React 19 & Tailwind",
     author: "devcraft academy",
     authorRole: "Senior Fullstack Architect",
-    authorAvatar: "/assets/images/about-instructor-1.png",
+    authorAvatar: "/assets/images/about-ellipse-9.png",
     level: "Intermediate",
     rating: 4.9,
     reviewsCount: 310,
@@ -430,13 +431,14 @@ export function getCourseDetailById(id: string): CourseDetailData {
   );
 
   if (matchedCourse) {
+    const creator = getCreatorBySlug(getCreatorSlug(matchedCourse.author));
     return {
       id: matchedCourse.id,
       title: matchedCourse.title,
       subtitle: `Master ${matchedCourse.category} with step-by-step real world industry guidance`,
       author: matchedCourse.author,
-      authorRole: "Professional Creator",
-      authorAvatar: "/assets/images/about-instructor.png",
+      authorRole: creator.role,
+      authorAvatar: creator.avatar,
       level: matchedCourse.level,
       rating: matchedCourse.rating,
       reviewsCount: matchedCourse.commentsCount * 3 + 12,
