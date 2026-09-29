@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/home/Hero";
 import { PartnerLogos } from "@/components/home/PartnerLogos";
 import { FeaturedCourses } from "@/components/home/FeaturedCourses";
@@ -20,6 +21,7 @@ export default function Home() {
         <CreatorCTA />
         <Testimonials />
       </main>
+      <Footer />
     </div>
   );
 }
