@@ -11,6 +11,7 @@ interface CourseFiltersProps {
   onSortChange: (sort: string) => void;
   categories: readonly string[];
   levels: readonly string[];
+  showCategoryChips?: boolean;
 }
 
 export function CourseFilters({
@@ -22,6 +23,7 @@ export function CourseFilters({
   onSortChange,
   categories,
   levels,
+  showCategoryChips = true,
 }: CourseFiltersProps) {
   return (
     <div className="w-full space-y-5">
@@ -101,25 +103,27 @@ export function CourseFilters({
       </div>
 
       {/* Bottom Category Chips Bar (Horizontal Scrollable) */}
-      <div className="no-scrollbar flex items-center gap-2.5 overflow-x-auto pb-1 sm:gap-3">
-        {categories.map((category) => {
-          const isActive = selectedCategory === category;
-          return (
-            <button
-              key={category}
-              type="button"
-              onClick={() => onCategoryChange(category)}
-              className={`shrink-0 rounded-full px-4.5 py-2 font-sans text-xs font-medium transition-all sm:text-sm ${
-                isActive
-                  ? "bg-[#CBFC01] text-neutral-950 shadow-xs ring-1 ring-[#CBFC01]"
-                  : "border border-neutral-200 bg-white text-neutral-700 hover:border-neutral-300 hover:bg-neutral-50"
-              }`}
-            >
-              {category}
-            </button>
-          );
-        })}
-      </div>
+      {showCategoryChips && (
+        <div className="no-scrollbar flex items-center gap-2.5 overflow-x-auto pb-1 sm:gap-3">
+          {categories.map((category) => {
+            const isActive = selectedCategory === category;
+            return (
+              <button
+                key={category}
+                type="button"
+                onClick={() => onCategoryChange(category)}
+                className={`shrink-0 rounded-full px-4.5 py-2 font-sans text-xs font-medium transition-all sm:text-sm ${
+                  isActive
+                    ? "bg-[#CBFC01] text-neutral-950 shadow-xs ring-1 ring-[#CBFC01]"
+                    : "border border-neutral-200 bg-white text-neutral-700 hover:border-neutral-300 hover:bg-neutral-50"
+                }`}
+              >
+                {category}
+              </button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

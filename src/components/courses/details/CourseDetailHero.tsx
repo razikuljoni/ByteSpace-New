@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BarChart2, Star, Users, Share2, Play } from "lucide-react";
 import { CourseDetailData } from "@/data/courseDetailData";
+import { getCreatorSlug } from "@/data/creators";
 
 interface CourseDetailHeroProps {
   course: CourseDetailData;
@@ -24,7 +25,7 @@ export function CourseDetailHero({ course }: CourseDetailHeroProps) {
           <p className="mt-2 text-xs text-white/80 sm:text-sm">
             by{" "}
             <Link
-              href="#instructor"
+              href={`/creators/${getCreatorSlug(course.author)}`}
               className="font-medium text-white underline underline-offset-2 transition-opacity hover:opacity-80"
             >
               {course.author}

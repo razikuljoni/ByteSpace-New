@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BookOpen, Video, Award, MessageSquare } from "lucide-react";
 import { CourseDetailData } from "@/data/courseDetailData";
+import { getCreatorSlug } from "@/data/creators";
 
 interface CourseDetailSidebarProps {
   course: CourseDetailData;
@@ -90,12 +91,21 @@ export function CourseDetailSidebar({ course }: CourseDetailSidebarProps) {
       {/* 4. Instructor Profile Card */}
       <div id="instructor" className="mt-6">
         <div className="flex items-center gap-3">
-          <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-neutral-200">
+          <Link
+            href={`/creators/${getCreatorSlug(course.author)}`}
+            className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-neutral-200 transition-opacity hover:opacity-85"
+            aria-label={`View ${course.author} profile`}
+          >
             <Image src={course.authorAvatar} alt={course.author} fill className="object-cover" />
-          </div>
+          </Link>
           <div>
             <h5 className="font-heading text-sm font-bold text-neutral-950">
-              {course.author.replace(/^\w/, (c) => c.toUpperCase())}
+              <Link
+                href={`/creators/${getCreatorSlug(course.author)}`}
+                className="transition-colors hover:text-[#003BE2]"
+              >
+                {course.author.replace(/^\w/, (c) => c.toUpperCase())}
+              </Link>
             </h5>
             <p className="text-xs text-neutral-500">{course.authorRole}</p>
           </div>
@@ -106,7 +116,7 @@ export function CourseDetailSidebar({ course }: CourseDetailSidebarProps) {
         </p>
 
         <Link
-          href={`/creators/${course.author}`}
+          href={`/creators/${getCreatorSlug(course.author)}`}
           className="mt-3.5 inline-block rounded-full border border-neutral-300 px-5 py-2 font-sans text-xs font-semibold text-neutral-800 transition-colors hover:border-neutral-400 hover:bg-neutral-50"
         >
           See Full Profile
