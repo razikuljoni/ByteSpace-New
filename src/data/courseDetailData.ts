@@ -17,6 +17,22 @@ export interface CourseModuleItem {
   description: string;
 }
 
+export interface ReviewItem {
+  id: string;
+  author: string;
+  role: string;
+  avatar: string;
+  timeAgo: string;
+  rating: number;
+  content: string;
+}
+
+export interface RatingBreakdownItem {
+  stars: number;
+  count: number;
+  percentage: number;
+}
+
 export interface CourseDetailData {
   id: string;
   title: string;
@@ -41,6 +57,8 @@ export interface CourseDetailData {
   keyPoints: string[];
   modules?: CourseModuleItem[];
   learningProgress?: number;
+  reviews?: ReviewItem[];
+  ratingsBreakdown?: RatingBreakdownItem[];
 }
 
 export const DEFAULT_MODULES: CourseModuleItem[] = [
@@ -80,6 +98,57 @@ export const DEFAULT_MODULES: CourseModuleItem[] = [
     description:
       "Adapt your digital creations for 'Mobile Platforms' and optimize for 'Social Media'. Ensure widespread accessibility and engagement across diverse digital landscapes.",
   },
+];
+
+export const DEFAULT_REVIEWS: ReviewItem[] = [
+  {
+    id: "review-1",
+    author: "PurePearl Studio",
+    role: "UI/UX Designer",
+    avatar: "/assets/images/about-ellipse-8.png",
+    timeAgo: "a year ago",
+    rating: 5,
+    content:
+      "The course provided me with a comprehensive understanding of digital asset creation. The lessons were incredibly practical, and immediately applicable to my work. Highly recommended!",
+  },
+  {
+    id: "review-2",
+    author: "Albert Flores",
+    role: "UI/UX Designer",
+    avatar: "/assets/images/about-ellipse-9.png",
+    timeAgo: "a year ago",
+    rating: 5,
+    content:
+      "This course revolutionized my approach to digital design. The combination of theory, hands-on exercises, and real-world applications made it a truly enriching experience. Excited to implement what I've learned!",
+  },
+  {
+    id: "review-3",
+    author: "Cody Fisher",
+    role: "UI/UX Designer",
+    avatar: "/assets/images/about-ellipse-10.png",
+    timeAgo: "a year ago",
+    rating: 5,
+    content:
+      "The project showcase and critique modules created a collaborative environment where I could showcase my work, receive valuable feedback, and refine my skills. It added a unique and valuable dimension to the learning process.",
+  },
+  {
+    id: "review-4",
+    author: "Brooklyn Simmons",
+    role: "UI/UX Designer",
+    avatar: "/assets/images/about-ellipse-11.png",
+    timeAgo: "a year ago",
+    rating: 5,
+    content:
+      "The lessons on optimizing digital assets for various platforms were particularly insightful. The course adapts to the evolving digital landscapes, and the engaging content kept me motivated throughout.",
+  },
+];
+
+export const DEFAULT_RATINGS_BREAKDOWN: RatingBreakdownItem[] = [
+  { stars: 5, count: 750, percentage: 75 },
+  { stars: 4, count: 150, percentage: 22 },
+  { stars: 3, count: 51, percentage: 10 },
+  { stars: 2, count: 10, percentage: 4 },
+  { stars: 1, count: 14, percentage: 6 },
 ];
 
 export const COURSE_DETAILS_MAP: Record<string, CourseDetailData> = {
@@ -146,6 +215,8 @@ export const COURSE_DETAILS_MAP: Record<string, CourseDetailData> = {
     ],
     learningProgress: 55,
     modules: DEFAULT_MODULES,
+    reviews: DEFAULT_REVIEWS,
+    ratingsBreakdown: DEFAULT_RATINGS_BREAKDOWN,
   },
   "course-1": {
     id: "course-1",
@@ -422,6 +493,8 @@ export function getCourseDetailById(id: string): CourseDetailData {
       ],
       learningProgress: 55,
       modules: DEFAULT_MODULES,
+      reviews: DEFAULT_REVIEWS,
+      ratingsBreakdown: DEFAULT_RATINGS_BREAKDOWN,
     };
   }
 
