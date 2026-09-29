@@ -10,7 +10,7 @@ interface CourseDetailTabsProps {
 export function CourseDetailTabs({ courseId, activeTab }: CourseDetailTabsProps) {
   const tabs = [
     { id: "about", label: "About", href: `/courses/${courseId}` },
-    { id: "lessons", label: "Lessons", href: `/courses/${courseId}/lessons` },
+    { id: "lessons", label: "Lesson", href: `/courses/${courseId}/lessons` },
     { id: "reviews", label: "Reviews", href: `/courses/${courseId}/reviews` },
   ] as const;
 
