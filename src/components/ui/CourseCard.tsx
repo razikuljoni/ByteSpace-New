@@ -49,7 +49,7 @@ export function CourseCard({ course, className = "", priority = false }: CourseC
             <div className="min-w-0 flex-1">
               <h3 className="font-heading text-[20px] font-semibold tracking-[-0.01em] text-black">
                 <Link
-                  href={course.authorUrl || "#"}
+                  href={`/courses/${course.id}`}
                   className="line-clamp-1 transition-colors hover:text-[#003BE2]"
                 >
                   {course.title}
