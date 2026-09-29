@@ -3,6 +3,7 @@ import { Hero } from "@/components/home/Hero";
 import { PartnerLogos } from "@/components/home/PartnerLogos";
 import { FeaturedCourses } from "@/components/home/FeaturedCourses";
 import { LearningPaths } from "@/components/home/LearningPaths";
+import { AboutSection } from "@/components/home/AboutSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <PartnerLogos />
         <FeaturedCourses />
         <LearningPaths />
+        <AboutSection />
       </main>
     </div>
   );
