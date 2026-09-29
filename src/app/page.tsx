@@ -4,6 +4,7 @@ import { PartnerLogos } from "@/components/home/PartnerLogos";
 import { FeaturedCourses } from "@/components/home/FeaturedCourses";
 import { LearningPaths } from "@/components/home/LearningPaths";
 import { AboutSection } from "@/components/home/AboutSection";
+import { CreatorCTA } from "@/components/home/CreatorCTA";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <FeaturedCourses />
         <LearningPaths />
         <AboutSection />
+        <CreatorCTA />
       </main>
     </div>
   );
