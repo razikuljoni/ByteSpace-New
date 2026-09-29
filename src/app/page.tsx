@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/home/Hero";
 import { PartnerLogos } from "@/components/home/PartnerLogos";
 import { FeaturedCourses } from "@/components/home/FeaturedCourses";
+import { LearningPaths } from "@/components/home/LearningPaths";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
         <PartnerLogos />
         <FeaturedCourses />
+        <LearningPaths />
       </main>
     </div>
   );
