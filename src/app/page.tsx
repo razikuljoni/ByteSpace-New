@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/home/Hero";
 import { PartnerLogos } from "@/components/home/PartnerLogos";
+import { FeaturedCourses } from "@/components/home/FeaturedCourses";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <PartnerLogos />
+        <FeaturedCourses />
       </main>
     </div>
   );
