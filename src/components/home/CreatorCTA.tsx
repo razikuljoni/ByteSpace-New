@@ -29,7 +29,7 @@ export function CreatorCTA() {
           className="pointer-events-none absolute -top-28 left-[11%] z-10 w-14 sm:left-[13%] sm:w-20 md:w-28 lg:left-[14%]"
         >
           <Image
-            src="/assets/images/cta-shape-helix-left-white.png"
+            src="/assets/images/shape-helix-left-white.png"
             alt="Decorative white zigzag"
             width={180}
             height={200}
