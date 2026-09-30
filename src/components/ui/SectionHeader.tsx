@@ -28,7 +28,7 @@ export function SectionHeader({
           transition={{ duration: 0.5 }}
           className="md:col-span-6"
         >
-          <h2 className="font-heading text-3xl font-semibold tracking-[-0.01em] text-[#242528] sm:text-4xl md:text-5xl md:leading-[1.18]">
+          <h2 className="font-heading xs:text-3xl text-2xl font-semibold tracking-[-0.01em] text-[#242528] sm:text-4xl md:text-5xl md:leading-[1.18]">
             {title}
           </h2>
         </motion.div>
@@ -41,7 +41,7 @@ export function SectionHeader({
             transition={{ duration: 0.5, delay: 0.1 }}
             className="md:col-span-6"
           >
-            <p className="font-sans text-sm leading-relaxed text-[#4B4C53] sm:text-base sm:leading-[160%]">
+            <p className="xs:text-sm font-sans text-xs leading-relaxed text-[#4B4C53] sm:text-base sm:leading-[160%]">
               {subtitle}
             </p>
           </motion.div>
@@ -57,7 +57,7 @@ export function SectionHeader({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="font-heading text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl md:text-5xl md:leading-[1.18]"
+        className="font-heading xs:text-3xl text-2xl font-semibold tracking-tight text-neutral-950 sm:text-4xl md:text-5xl md:leading-[1.18]"
       >
         {title}
       </motion.h2>

@@ -14,14 +14,14 @@ export default function NotFound() {
         {/* Center 404 Visual & Content */}
         <main className="relative z-10 mx-auto flex max-w-7xl flex-1 flex-col items-center justify-center px-4 pt-32 pb-20 text-center sm:pt-36 sm:pb-28">
           {/* Giant 404 Gradient Number */}
-          <div className="font-heading text-[140px] leading-none font-black tracking-tight select-none sm:text-[200px] md:text-[260px] lg:text-[300px]">
+          <div className="font-heading xs:text-[130px] text-[100px] leading-none font-black tracking-tight select-none sm:text-[200px] md:text-[260px] lg:text-[300px]">
             <span className="bg-gradient-to-b from-[#CBFC01] via-[#CBFC01]/70 to-[#CBFC01]/5 bg-clip-text text-transparent">
               404
             </span>
           </div>
 
           {/* Overlapping Headline, Description, and CTA */}
-          <div className="relative z-10 -mt-16 max-w-2xl px-4 sm:-mt-24 md:-mt-32">
+          <div className="xs:-mt-14 relative z-10 -mt-10 max-w-2xl px-4 sm:-mt-24 md:-mt-32">
             <h1 className="font-heading text-2xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
               The page you are looking
               <br />

@@ -19,14 +19,14 @@ export function AuthCard({ mode }: AuthCardProps) {
   };
 
   return (
-    <div className="w-full max-w-[480px] rounded-[28px] bg-white p-7 shadow-2xl ring-1 ring-black/5 sm:rounded-[36px] sm:p-11">
+    <div className="xs:p-7 w-full max-w-[480px] rounded-2xl bg-white p-5 shadow-2xl ring-1 ring-black/5 sm:rounded-[36px] sm:p-10 md:p-11">
       {/* Category Tag */}
-      <span className="font-sans text-sm font-semibold tracking-normal text-[#003BE2]">
+      <span className="font-sans text-xs font-semibold tracking-normal text-[#003BE2] sm:text-sm">
         {isLogin ? "Sign In" : "Create an Account"}
       </span>
 
       {/* Main Heading */}
-      <h2 className="font-heading mt-2 mb-7 text-3xl font-bold tracking-tight text-neutral-950 sm:text-4xl">
+      <h2 className="font-heading xs:text-3xl mt-2 mb-6 text-2xl font-bold tracking-tight text-neutral-950 sm:mb-7 sm:text-4xl">
         {isLogin ? "Welcome Back" : "Welcome to ByteSpace"}
       </h2>
 

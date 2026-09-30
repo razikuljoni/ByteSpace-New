@@ -12,10 +12,10 @@ export function LearningPathCard({ path, className = "" }: LearningPathCardProps
   return (
     <Link
       href={path.href || "#"}
-      className={`group relative flex flex-col items-center justify-center rounded-[24px] border border-[#CED0D3] bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-neutral-400 hover:shadow-md sm:p-7 ${className}`}
+      className={`group xs:p-4.5 relative flex flex-col items-center justify-center rounded-[20px] border border-[#CED0D3] bg-white p-3.5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-neutral-400 hover:shadow-md sm:rounded-[24px] sm:p-7 ${className}`}
     >
       {/* Lime Circle Icon Container */}
-      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#D4FB20] transition-transform duration-300 group-hover:scale-105 sm:h-16 sm:w-16">
+      <div className="xs:h-14 xs:w-14 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#D4FB20] transition-transform duration-300 group-hover:scale-105 sm:h-16 sm:w-16">
         {path.iconName === "design" && (
           <svg
             width="24"
@@ -129,7 +129,7 @@ export function LearningPathCard({ path, className = "" }: LearningPathCardProps
       </div>
 
       {/* Label */}
-      <span className="mt-4 font-sans text-sm font-medium text-neutral-900 transition-colors group-hover:text-[#003BE2] sm:mt-5 sm:text-base">
+      <span className="xs:text-sm mt-3 font-sans text-xs font-medium text-neutral-900 transition-colors group-hover:text-[#003BE2] sm:mt-5 sm:text-base">
         {path.title}
       </span>
     </Link>

@@ -29,14 +29,16 @@ export function CourseDetailLayout({ course, activeTab, children }: CourseDetail
       <Navbar />
 
       {/* 3. Main Page Content Container */}
-      <main className="relative z-10 mx-auto max-w-7xl px-6 pt-32 pb-16 sm:pt-36 lg:px-8 lg:pt-40 lg:pb-24">
+      <main className="relative z-10 mx-auto max-w-7xl px-4 pt-28 pb-14 sm:px-6 sm:pt-36 sm:pb-16 lg:px-8 lg:pt-40 lg:pb-24">
         {/* Top Header: Title, Author, Badges & Share Button */}
-        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-start">
+        <div className="flex flex-col justify-between gap-4 sm:gap-6 lg:flex-row lg:items-start">
           <div className="max-w-3xl">
-            <h1 className="font-heading text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
+            <h1 className="font-heading xs:text-2xl text-xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
               {course.title}
             </h1>
-            <p className="mt-2 font-sans text-sm text-white/80 sm:text-base">{course.subtitle}</p>
+            <p className="xs:text-sm mt-2 font-sans text-xs text-white/80 sm:text-base">
+              {course.subtitle}
+            </p>
 
             <p className="mt-2 text-xs text-white/80 sm:text-sm">
               by{" "}

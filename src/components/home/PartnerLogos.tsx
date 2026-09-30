@@ -11,8 +11,8 @@ export function PartnerLogos() {
 
   return (
     <section className="relative z-10 w-full border-y border-neutral-200/80 bg-white py-8 md:py-10">
-      <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        <div className="flex flex-wrap items-center justify-between gap-8 md:gap-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
+        <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between sm:gap-8 md:gap-12">
           {partners.map((p, idx) => (
             <div
               key={idx}

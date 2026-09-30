@@ -27,43 +27,43 @@ export function Hero() {
   return (
     <BlueGridBackground as="section" className="pt-28 pb-0 sm:pt-20 md:pt-28 lg:pt-32">
       {/* Hero Header Content */}
-      <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-12">
+      <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="mx-auto max-w-4xl text-center"
         >
-          <h1 className="font-heading text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[72px] lg:leading-[1.12]">
+          <h1 className="font-heading text-3xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[72px] lg:leading-[1.12]">
             Get Access to Hundreds
             <br />
             Courses Available
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl font-sans text-sm text-white/85 sm:text-base md:text-lg">
+          <p className="xs:text-sm mx-auto mt-4 max-w-2xl font-sans text-xs text-white/85 sm:text-base md:text-lg">
             Unlock your creativity, gain valuable knowledge, and grow your business with our wide
             range of courses.
           </p>
 
           {/* Search Input and Button */}
-          <div className="mx-auto mt-8 max-w-xl">
+          <div className="mx-auto mt-6 max-w-xl sm:mt-8">
             <form
               onSubmit={handleSearch}
-              className="flex items-center justify-center gap-3 sm:gap-3.5"
+              className="xs:gap-3 flex items-center justify-center gap-2 sm:gap-3.5"
             >
-              <div className="focus-within:ring-accent flex flex-1 items-center rounded-full bg-white px-5 py-3 shadow-xl transition-all focus-within:ring-2">
-                <Search className="mr-2.5 h-5 w-5 shrink-0 text-neutral-400" />
+              <div className="focus-within:ring-accent xs:px-5 xs:py-3 flex flex-1 items-center rounded-full bg-white px-3.5 py-2.5 shadow-xl transition-all focus-within:ring-2">
+                <Search className="xs:mr-2.5 xs:h-5 xs:w-5 mr-2 h-4 w-4 shrink-0 text-neutral-400" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Course, topic, creator"
                   aria-label="Search courses, topics, or creators"
-                  className="w-full bg-transparent text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none md:text-base"
+                  className="xs:text-sm w-full bg-transparent text-xs text-neutral-900 placeholder:text-neutral-400 focus:outline-none md:text-base"
                 />
               </div>
               <button
                 type="submit"
-                className="bg-accent hover:bg-accent/90 shrink-0 rounded-full px-7 py-3 font-sans text-sm font-medium text-neutral-950 shadow-md transition-all active:scale-95 md:px-8 md:text-base"
+                className="bg-accent hover:bg-accent/90 xs:px-7 xs:py-3 xs:text-sm shrink-0 rounded-full px-5 py-2.5 font-sans text-xs font-medium text-neutral-950 shadow-md transition-all active:scale-95 md:px-8 md:text-base"
               >
                 Search
               </button>
@@ -73,7 +73,7 @@ export function Hero() {
       </div>
 
       {/* Full-Width Visual Area for 3D Edge Shapes & Center Student */}
-      <div className="relative -mt-70 h-[460px] w-full sm:h-[580px] md:h-[680px] lg:h-[760px]">
+      <div className="relative -mt-16 h-[300px] w-full sm:-mt-36 sm:h-[580px] md:-mt-52 md:h-[680px] lg:-mt-70 lg:h-[760px]">
         {/* ================= EDGE ATTACHED 3D SHAPES ================= */}
 
         {/* Top-Left Lime Spiral Coil (Touches Left Edge) */}
@@ -98,7 +98,7 @@ export function Hero() {
           alt="White 3D spiral"
           width={130}
           height={170}
-          className="pointer-events-none absolute top-[36%] left-[8%] z-10 w-14 sm:top-[38%] sm:left-[11%] sm:w-20 md:top-[40%] md:left-[13%] md:w-28 lg:left-[14%] lg:w-32"
+          className="pointer-events-none absolute top-[36%] left-[8%] z-10 hidden w-14 sm:top-[38%] sm:left-[11%] sm:block sm:w-20 md:top-[40%] md:left-[13%] md:w-28 lg:left-[14%] lg:w-32"
           imageClassName="h-auto w-full drop-shadow-xl"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -146,7 +146,7 @@ export function Hero() {
           alt="White 3D pyramid"
           width={150}
           height={150}
-          className="pointer-events-none absolute top-[36%] right-[8%] z-10 w-16 sm:top-[38%] sm:right-[11%] sm:w-24 md:top-[40%] md:right-[13%] md:w-32 lg:right-[14%] lg:w-36"
+          className="pointer-events-none absolute top-[36%] right-[8%] z-10 hidden w-16 sm:top-[38%] sm:right-[11%] sm:block sm:w-24 md:top-[40%] md:right-[13%] md:w-32 lg:right-[14%] lg:w-36"
           imageClassName="h-auto w-full drop-shadow-xl"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -175,13 +175,13 @@ export function Hero() {
         {/* ================= CENTER LIME ARCH BACKDROP ================= */}
         {/* Top of lime arch matches student head height, bottom sits at frame edge */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 flex justify-center overflow-hidden">
-          <div className="relative h-[360px] w-[500px] sm:h-[480px] sm:w-[680px] md:h-[580px] md:w-[820px] lg:h-[660px] lg:w-[940px]">
+          <div className="relative h-[340px] w-[320px] sm:h-[480px] sm:w-[680px] md:h-[580px] md:w-[820px] lg:h-[660px] lg:w-[940px]">
             <Image
               src="/assets/images/hero-arch-lime.png"
               alt="Lime arch backdrop"
               fill
               priority
-              sizes="(max-width: 640px) 500px, (max-width: 768px) 680px, (max-width: 1024px) 820px, 940px"
+              sizes="(max-width: 640px) 320px, (max-width: 768px) 680px, (max-width: 1024px) 820px, 940px"
               className="object-contain object-bottom"
             />
           </div>
@@ -189,13 +189,13 @@ export function Hero() {
 
         {/* ================= CENTER STUDENT ================= */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex justify-center">
-          <div className="relative h-[390px] w-[340px] sm:h-[520px] sm:w-[460px] md:h-[620px] md:w-[560px] lg:h-[700px] lg:w-[640px]">
+          <div className="relative h-[370px] w-[280px] sm:h-[520px] sm:w-[460px] md:h-[620px] md:w-[560px] lg:h-[700px] lg:w-[640px]">
             <Image
               src="/assets/images/hero-student.png"
               alt="Student holding laptop"
               fill
               priority
-              sizes="(max-width: 640px) 340px, (max-width: 768px) 460px, (max-width: 1024px) 560px, 640px"
+              sizes="(max-width: 640px) 280px, (max-width: 768px) 460px, (max-width: 1024px) 560px, 640px"
               className="object-contain object-bottom drop-shadow-[0_25px_40px_rgba(0,0,0,0.4)]"
             />
           </div>
@@ -208,7 +208,7 @@ export function Hero() {
           initial={{ opacity: 0, x: -20, y: 10 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="absolute top-[28%] left-[22%] z-20 hidden rounded-2xl border border-neutral-100/90 bg-white p-3.5 shadow-[0_16px_36px_rgba(0,0,0,0.14)] sm:block md:top-[53%] md:left-[24%] md:p-4 lg:left-[26%]"
+          className="absolute top-[28%] left-[22%] z-20 hidden rounded-2xl border border-neutral-100/90 bg-white p-3.5 shadow-[0_16px_36px_rgba(0,0,0,0.14)] sm:block md:top-[53%] md:left-[10%] md:p-4 lg:left-[18%] xl:left-[28%]"
         >
           <p className="font-sans text-xs font-semibold text-neutral-900 md:text-sm">
             UI/UX Design
@@ -223,7 +223,7 @@ export function Hero() {
           initial={{ opacity: 0, x: 20, y: 10 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 0.6, delay: 0.55 }}
-          className="absolute top-[32%] right-[20%] z-20 hidden min-w-[170px] sm:block md:top-[60%] md:right-[22%] md:min-w-[190px] lg:right-[32%]"
+          className="absolute top-[32%] right-[20%] z-20 hidden min-w-[170px] sm:block md:top-[60%] md:right-[22%] md:min-w-[190px] lg:right-[30%]"
         >
           <LearningProgressBadge progress={55} size="sm" />
         </motion.div>
