@@ -39,6 +39,7 @@ export function CreatorHero({ creator, totalCourses }: CreatorHeroProps) {
               alt={creator.name}
               fill
               priority
+              sizes="(max-width: 640px) 80px, 96px"
               className="object-cover object-top"
             />
           </div>

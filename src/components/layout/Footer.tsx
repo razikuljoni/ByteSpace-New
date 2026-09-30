@@ -71,6 +71,7 @@ export function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
+                aria-label="Enter your email address"
                 className="w-full flex-1 rounded-full border border-neutral-300 bg-white px-5 py-3 font-sans text-sm text-neutral-900 transition-all placeholder:text-neutral-400 focus:border-transparent focus:ring-2 focus:ring-[#003BE2] focus:outline-none"
               />
               <button

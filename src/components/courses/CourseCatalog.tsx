@@ -152,7 +152,7 @@ export function CourseCatalog() {
                 <CourseCard
                   key={course.id || idx}
                   course={course}
-                  priority={idx < 6 && currentPage === 1}
+                  priority={idx < 3 && currentPage === 1}
                 />
               ))}
             </div>

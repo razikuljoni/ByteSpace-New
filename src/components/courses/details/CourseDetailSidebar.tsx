@@ -96,7 +96,13 @@ export function CourseDetailSidebar({ course }: CourseDetailSidebarProps) {
             className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-neutral-200 transition-opacity hover:opacity-85"
             aria-label={`View ${course.author} profile`}
           >
-            <Image src={course.authorAvatar} alt={course.author} fill className="object-cover" />
+            <Image
+              src={course.authorAvatar}
+              alt={course.author}
+              fill
+              sizes="48px"
+              className="object-cover"
+            />
           </Link>
           <div>
             <h5 className="font-heading text-sm font-bold text-neutral-950">

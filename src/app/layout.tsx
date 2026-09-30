@@ -10,9 +10,28 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "ByteSpace - Get Access to Hundreds Courses Available",
+  metadataBase: new URL("https://bytespace-peach.vercel.app"),
+  title: {
+    default: "ByteSpace - Get Access to Hundreds Courses Available",
+    template: "%s | ByteSpace",
+  },
   description:
     "Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://bytespace-peach.vercel.app",
+    siteName: "ByteSpace",
+    title: "ByteSpace - Get Access to Hundreds Courses Available",
+    description:
+      "Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ByteSpace - Get Access to Hundreds Courses Available",
+    description:
+      "Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -32,10 +51,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} h-full antialiased`}>
       <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
         <link
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"

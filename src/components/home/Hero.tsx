@@ -57,6 +57,7 @@ export function Hero() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Course, topic, creator"
+                  aria-label="Search courses, topics, or creators"
                   className="w-full bg-transparent text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none md:text-base"
                 />
               </div>
@@ -89,7 +90,6 @@ export function Hero() {
           floatY={-10}
           floatRotate={2}
           duration={6}
-          priority
         />
 
         {/* Mid-Left Small White Helix */}
@@ -138,7 +138,6 @@ export function Hero() {
           floatY={-12}
           floatRotate={-2}
           duration={5.6}
-          priority
         />
 
         {/* Mid-Right White Pyramid */}
@@ -182,6 +181,7 @@ export function Hero() {
               alt="Lime arch backdrop"
               fill
               priority
+              sizes="(max-width: 640px) 500px, (max-width: 768px) 680px, (max-width: 1024px) 820px, 940px"
               className="object-contain object-bottom"
             />
           </div>
@@ -195,6 +195,7 @@ export function Hero() {
               alt="Student holding laptop"
               fill
               priority
+              sizes="(max-width: 640px) 340px, (max-width: 768px) 460px, (max-width: 1024px) 560px, 640px"
               className="object-contain object-bottom drop-shadow-[0_25px_40px_rgba(0,0,0,0.4)]"
             />
           </div>

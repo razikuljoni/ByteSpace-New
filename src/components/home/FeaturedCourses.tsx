@@ -77,13 +77,8 @@ export function FeaturedCourses() {
               className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"
             >
               {displayedCourses.length > 0 ? (
-                displayedCourses.map((course, idx) => (
-                  <CourseCard
-                    key={course.id}
-                    course={course}
-                    priority={idx < 3}
-                    className="h-full"
-                  />
+                displayedCourses.map((course) => (
+                  <CourseCard key={course.id} course={course} className="h-full" />
                 ))
               ) : (
                 <EmptyState

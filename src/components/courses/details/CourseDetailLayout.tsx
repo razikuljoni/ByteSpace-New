@@ -95,6 +95,7 @@ export function CourseDetailLayout({ course, activeTab, children }: CourseDetail
                 alt={course.title}
                 fill
                 priority
+                sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 680px, 800px"
                 className="object-cover object-top opacity-95"
               />
               <div className="pointer-events-none absolute inset-0 bg-black/10" />
