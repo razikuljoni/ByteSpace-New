@@ -6,6 +6,7 @@ import Image from "next/image";
 import { BarChart2, Star, Users, Share2, Play } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { BlueGridBackground } from "@/components/ui/BlueGridBackground";
 import { CourseDetailTabs } from "./CourseDetailTabs";
 import { CourseDetailSidebar } from "./CourseDetailSidebar";
 import { CourseDetailData } from "@/data/courseDetailData";
@@ -21,12 +22,7 @@ export function CourseDetailLayout({ course, activeTab, children }: CourseDetail
   return (
     <div className="relative min-h-screen w-full bg-[#FAFAFA] font-sans text-neutral-900">
       {/* 1. Blueprint Grid Background for the Top Hero Banner */}
-      <div className="bg-brand pointer-events-none absolute inset-x-0 top-0 z-0 h-[640px] overflow-hidden sm:h-[680px] lg:h-[720px]">
-        {/* Grid pattern overlay */}
-        <div className="bg-grid-pattern absolute inset-0 opacity-70" />
-        {/* Radial glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_0%,rgba(40,114,255,0.35),rgba(0,59,226,0))]" />
-      </div>
+      <BlueGridBackground className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[640px] sm:h-[680px] lg:h-[720px]" />
 
       {/* 2. Global Navbar */}
       <Navbar />
