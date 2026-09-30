@@ -22,6 +22,7 @@ export function CourseDetailTabs({ courseId, activeTab }: CourseDetailTabsProps)
           <Link
             key={tab.id}
             href={tab.href}
+            scroll={false}
             className={`rounded-full px-5 py-2 font-sans text-xs font-semibold transition-all sm:text-sm ${
               isActive
                 ? "bg-[#CBFC01] text-neutral-950 shadow-xs"

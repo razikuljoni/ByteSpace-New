@@ -23,7 +23,7 @@ export function CourseDetailLayout({ course, activeTab, children }: CourseDetail
   return (
     <div className="relative min-h-screen w-full bg-[#FAFAFA] font-sans text-neutral-900">
       {/* 1. Blueprint Grid Background for the Top Hero Banner */}
-      <BlueGridBackground className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[640px] sm:h-[680px] lg:h-[720px]" />
+      <BlueGridBackground className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[600px] sm:h-[680px] md:h-[680px] lg:h-[680px] xl:h-[820px]" />
 
       {/* 2. Global Navbar */}
       <Navbar />
