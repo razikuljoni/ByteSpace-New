@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { COURSE_CATEGORIES, COURSES } from "@/data/courses";
 import { CourseCard } from "@/components/ui/CourseCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { EmptyState } from "@/components/ui/EmptyState";
 
 export function FeaturedCourses() {
   const [selectedCategory, setSelectedCategory] = useState<string>("Featured");
@@ -85,18 +86,13 @@ export function FeaturedCourses() {
                   />
                 ))
               ) : (
-                <div className="col-span-full py-16 text-center">
-                  <p className="font-heading text-lg font-medium text-neutral-700">
-                    No courses found in this category yet.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => setSelectedCategory("Featured")}
-                    className="text-brand hover:text-brand/80 mt-3 font-sans text-sm font-semibold underline"
-                  >
-                    View Featured Courses
-                  </button>
-                </div>
+                <EmptyState
+                  className="col-span-full py-12"
+                  title="No courses found in this category yet"
+                  description="Explore our other categories or check back later for newly added courses."
+                  actionLabel="View Featured Courses"
+                  onAction={() => setSelectedCategory("Featured")}
+                />
               )}
             </motion.div>
           </AnimatePresence>

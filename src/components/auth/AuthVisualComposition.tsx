@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { Star, BarChart3 } from "lucide-react";
+import { BarChart3 } from "lucide-react";
 import { HappyStudentsBadge } from "@/components/ui/HappyStudentsBadge";
 import { AvatarStack } from "@/components/ui/AvatarStack";
+import { FloatingShape } from "@/components/ui/FloatingShape";
+import { StarRating } from "@/components/ui/StarRating";
 
 const CARD_STUDENT_AVATARS = [
   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
@@ -17,15 +19,16 @@ export function AuthVisualComposition() {
     <div className="relative mx-auto mt-6 w-full max-w-[500px] select-none sm:mt-10 lg:mx-0">
       <div className="relative h-[420px] w-full sm:h-[460px]">
         {/* 1. 3D Torus Ring Shape - Top Left */}
-        <div className="pointer-events-none absolute -top-4 left-4 z-30 h-16 w-16 sm:left-8 sm:h-20 sm:w-20">
-          <Image
-            src="/assets/images/shape-torus-full-lime.png"
-            alt="3D lime ring"
-            width={80}
-            height={80}
-            className="h-full w-full object-contain drop-shadow-lg"
-          />
-        </div>
+        <FloatingShape
+          src="/assets/images/shape-torus-full-lime.png"
+          alt="3D lime ring"
+          width={80}
+          height={80}
+          className="pointer-events-none absolute -top-4 left-4 z-30 h-16 w-16 sm:left-8 sm:h-20 sm:w-20"
+          imageClassName="h-full w-full object-contain drop-shadow-lg"
+          floatY={-6}
+          duration={5}
+        />
 
         {/* 2. Background Course Card (Build Digital Asset) - Offset Left/Back */}
         <div className="absolute top-10 left-0 z-10 w-[240px] rounded-2xl bg-white p-3 shadow-xl sm:top-12 sm:left-2 sm:w-[280px] sm:p-4">
@@ -102,10 +105,14 @@ export function AuthVisualComposition() {
               <h4 className="font-heading truncate text-sm font-bold text-neutral-900 sm:text-base">
                 the Power of Big Data
               </h4>
-              <div className="flex shrink-0 items-center gap-0.5 font-sans text-xs font-semibold text-neutral-900">
-                <span>4.5</span>
-                <Star className="h-3.5 w-3.5 fill-[#CBFC01] text-[#CBFC01]" />
-              </div>
+              <StarRating
+                rating={4.5}
+                singleStar
+                showNumber
+                size="sm"
+                variant="lime"
+                className="shrink-0 font-sans text-xs font-semibold text-neutral-900"
+              />
             </div>
 
             <p className="mt-0.5 text-[11px] text-neutral-500">by purepearl studio</p>
@@ -134,26 +141,28 @@ export function AuthVisualComposition() {
         </div>
 
         {/* 4. 3D Lime Pyramid Shape - Bottom Left */}
-        <div className="pointer-events-none absolute bottom-0 left-0 z-30 h-20 w-20 sm:bottom-2 sm:left-2 sm:h-24 sm:w-24">
-          <Image
-            src="/assets/images/cta-shape-pyramid-lime.png"
-            alt="3D lime pyramid"
-            width={96}
-            height={96}
-            className="h-full w-full object-contain drop-shadow-xl"
-          />
-        </div>
+        <FloatingShape
+          src="/assets/images/cta-shape-pyramid-lime.png"
+          alt="3D lime pyramid"
+          width={96}
+          height={96}
+          className="pointer-events-none absolute bottom-0 left-0 z-30 h-20 w-20 sm:bottom-2 sm:left-2 sm:h-24 sm:w-24"
+          imageClassName="h-full w-full object-contain drop-shadow-xl"
+          floatY={6}
+          duration={6}
+        />
 
         {/* 5. 3D White Squiggle/Spring Helix Shape - Right */}
-        <div className="pointer-events-none absolute right-[-10px] bottom-14 z-30 h-24 w-24 sm:right-[-20px] sm:bottom-16 sm:h-28 sm:w-28">
-          <Image
-            src="/assets/images/shape-helix-small-white-2.png"
-            alt="3D white spring helix"
-            width={112}
-            height={112}
-            className="h-full w-full object-contain drop-shadow-lg"
-          />
-        </div>
+        <FloatingShape
+          src="/assets/images/shape-helix-small-white-2.png"
+          alt="3D white spring helix"
+          width={112}
+          height={112}
+          className="pointer-events-none absolute right-[-10px] bottom-14 z-30 h-24 w-24 sm:right-[-20px] sm:bottom-16 sm:h-28 sm:w-28"
+          imageClassName="h-full w-full object-contain drop-shadow-lg"
+          floatY={-8}
+          duration={5.5}
+        />
 
         {/* 6. Lime "Happy Students" Floating Pill Card - Bottom Center/Right */}
         <div className="absolute right-6 bottom-4 z-30 sm:right-10 sm:bottom-6">

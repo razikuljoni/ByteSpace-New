@@ -119,7 +119,7 @@ export function CreatorCTA() {
 
             <div className="mt-8 sm:mt-10">
               <Link
-                href="/creator/register"
+                href="/register?role=creator"
                 className="bg-accent hover:bg-accent/90 inline-flex items-center justify-center rounded-full px-8 py-3.5 font-sans text-sm font-medium text-neutral-950 shadow-lg transition-all active:scale-95 sm:text-base"
               >
                 Join as Creator

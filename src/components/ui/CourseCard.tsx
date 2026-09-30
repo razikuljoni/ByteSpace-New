@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Star } from "lucide-react";
 import { Course } from "@/types/course";
 import { getCreatorSlug } from "@/data/creators";
 import { AvatarStack } from "@/components/ui/AvatarStack";
+import { StarRating } from "@/components/ui/StarRating";
 
 interface CourseCardProps {
   course: Course;
@@ -69,10 +69,15 @@ export function CourseCard({ course, className = "", priority = false }: CourseC
             </div>
 
             {/* Rating */}
-            <div className="flex shrink-0 items-center gap-1 font-sans text-[18px] leading-[160%] text-[#4F4F4F]">
-              <span>{course.rating.toFixed(1)}</span>
-              <Star className="h-5 w-5 fill-[#CED0D3] text-[#CED0D3]" />
-            </div>
+            <StarRating
+              rating={course.rating}
+              singleStar
+              showNumber
+              numberClassName="font-normal"
+              size="md"
+              variant="gray"
+              className="shrink-0 font-sans text-[18px] leading-[160%] text-[#4F4F4F]"
+            />
           </div>
 
           {/* Level and Students Avatars Stack */}

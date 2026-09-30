@@ -6,6 +6,7 @@ import { COURSES } from "@/data/courses";
 import { CourseCard } from "@/components/ui/CourseCard";
 import { HappyStudentsBadge } from "@/components/ui/HappyStudentsBadge";
 import { LearningProgressBadge } from "@/components/ui/LearningProgressBadge";
+import { FloatingShape } from "@/components/ui/FloatingShape";
 
 const INSTRUCTOR_BENEFITS = [
   "Share Your Expertise",
@@ -107,15 +108,17 @@ export function AboutSection() {
           >
             <div className="relative h-[500px] w-full max-w-[620px] sm:h-[580px] lg:h-[600px]">
               {/* Lime 3D Coil Behind Student (Top-Right) */}
-              <div className="pointer-events-none absolute top-4 right-4 z-40 w-28 sm:top-28 sm:right-2 sm:w-36">
-                <Image
-                  src="/assets/images/shape-helix-right-lime.png"
-                  alt="3D lime helix"
-                  width={180}
-                  height={220}
-                  className="h-auto w-full object-contain"
-                />
-              </div>
+              <FloatingShape
+                src="/assets/images/shape-helix-right-lime.png"
+                alt="3D lime helix"
+                width={180}
+                height={220}
+                className="pointer-events-none absolute top-4 right-4 z-40 w-28 sm:top-28 sm:right-2 sm:w-36"
+                imageClassName="h-auto w-full object-contain"
+                floatY={-8}
+                floatRotate={2}
+                duration={6}
+              />
 
               {/* Background CourseCard (Top-Left) */}
               <div className="absolute top-2 left-0 z-10 w-[260px] drop-shadow-xl sm:top-4 sm:left-0 sm:w-[300px] md:w-[330px]">
@@ -160,15 +163,17 @@ export function AboutSection() {
           >
             <div className="relative h-[520px] w-full max-w-[580px] sm:h-[600px] lg:h-[640px]">
               {/* Lime 3D Coil Behind Instructor (Mid-Right) */}
-              <div className="pointer-events-none absolute top-24 right-4 z-40 w-28 sm:top-44 sm:right-24 sm:w-36">
-                <Image
-                  src="/assets/images/shape-helix-full-left-lime.png"
-                  alt="3D lime helix"
-                  width={180}
-                  height={220}
-                  className="h-auto w-full object-contain"
-                />
-              </div>
+              <FloatingShape
+                src="/assets/images/shape-helix-full-left-lime.png"
+                alt="3D lime helix"
+                width={180}
+                height={220}
+                className="pointer-events-none absolute top-24 right-4 z-40 w-28 sm:top-44 sm:right-24 sm:w-36"
+                imageClassName="h-auto w-full object-contain"
+                floatY={8}
+                floatRotate={-2}
+                duration={5.5}
+              />
 
               {/* Total Revenue Blue Badge (Top-Left) */}
               <motion.div
