@@ -2,16 +2,7 @@
 
 import Image from "next/image";
 import { Star, BarChart3 } from "lucide-react";
-
-const HAPPY_STUDENTS_AVATARS = [
-  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
-  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
-  "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
-  "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
-  "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
-];
+import { HappyStudentsBadge } from "@/components/ui/HappyStudentsBadge";
 
 const CARD_STUDENT_AVATARS = [
   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
@@ -176,28 +167,8 @@ export function AuthVisualComposition() {
         </div>
 
         {/* 6. Lime "Happy Students" Floating Pill Card - Bottom Center/Right */}
-        <div className="absolute right-6 bottom-4 z-30 rounded-2xl bg-[#CBFC01] p-3 shadow-xl sm:right-10 sm:bottom-6 sm:p-3.5">
-          <div className="flex items-center justify-between gap-3">
-            <span className="font-heading text-xs font-bold text-neutral-950">Happy Students</span>
-            <div className="flex items-center gap-0.5 text-[11px] font-semibold text-neutral-900">
-              <span>4.5 (240)</span>
-              <Star className="h-3 w-3 fill-[#003BE2] text-[#003BE2]" />
-            </div>
-          </div>
-
-          <div className="mt-2 flex items-center -space-x-1.5">
-            {HAPPY_STUDENTS_AVATARS.map((avatar, idx) => (
-              <div
-                key={idx}
-                className="ring-1.5 relative h-6 w-6 overflow-hidden rounded-full ring-white"
-              >
-                <Image src={avatar} alt="Happy student avatar" fill className="object-cover" />
-              </div>
-            ))}
-            <div className="ring-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-neutral-950 text-[9px] font-bold text-white ring-white">
-              2K+
-            </div>
-          </div>
+        <div className="absolute right-6 bottom-4 z-30 sm:right-10 sm:bottom-6">
+          <HappyStudentsBadge layout="split" variant="lime" />
         </div>
       </div>
     </div>
