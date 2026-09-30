@@ -16,10 +16,32 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const creator = getCreatorBySlug(slug);
+  const title = `${creator.name} - Creator Profile - ByteSpace`;
+  const description = creator.bioParagraphs[0];
 
   return {
-    title: `${creator.name} - Creator Profile - ByteSpace`,
-    description: creator.bioParagraphs[0],
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "profile",
+      url: `/creators/${slug}`,
+      images: [
+        {
+          url: creator.avatar,
+          width: 600,
+          height: 600,
+          alt: creator.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [creator.avatar],
+    },
   };
 }
 

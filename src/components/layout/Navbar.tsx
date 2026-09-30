@@ -86,6 +86,8 @@ export function Navbar() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="flex h-9 w-9 items-center justify-center rounded-lg text-white hover:bg-white/10"
             aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav-menu"
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -94,7 +96,7 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="bg-brand border-t border-white/10 px-6 py-5 md:hidden">
+        <div id="mobile-nav-menu" className="bg-brand border-t border-white/10 px-6 py-5 md:hidden">
           <div className="flex flex-col space-y-4">
             <Link
               href="/"

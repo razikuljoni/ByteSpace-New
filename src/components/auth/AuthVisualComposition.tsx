@@ -38,6 +38,7 @@ export function AuthVisualComposition() {
               src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&auto=format&fit=crop&q=80"
               alt="Build Digital Asset preview"
               fill
+              sizes="(max-width: 640px) 240px, 280px"
               className="object-cover opacity-80"
             />
             <div className="absolute bottom-2 left-2 rounded-full bg-black/40 px-2.5 py-0.5 text-[10px] font-medium text-white backdrop-blur-xs">
@@ -83,6 +84,7 @@ export function AuthVisualComposition() {
               src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80"
               alt="the Power of Big Data chart preview"
               fill
+              sizes="(max-width: 640px) 260px, 320px"
               className="object-cover"
             />
             {/* Meta Overlay Pills */}
