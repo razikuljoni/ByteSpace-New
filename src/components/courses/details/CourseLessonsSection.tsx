@@ -3,6 +3,7 @@
 import React from "react";
 import { Video } from "lucide-react";
 import { CourseDetailData, DEFAULT_MODULES } from "@/data/courseDetailData";
+import { LearningProgressBadge } from "@/components/ui/LearningProgressBadge";
 
 interface CourseLessonsSectionProps {
   course: CourseDetailData;
@@ -72,19 +73,8 @@ export function CourseLessonsSection({ course }: CourseLessonsSectionProps) {
         </p>
 
         {/* Progress Card */}
-        <div className="mt-4 rounded-2xl border border-neutral-200/90 bg-white p-5 shadow-xs sm:p-6">
-          <span className="font-sans text-xs font-semibold text-neutral-700">
-            Learning Progress
-          </span>
-          <div className="font-heading mt-1 text-2xl font-bold tracking-tight text-neutral-950 sm:text-3xl">
-            {progress}%
-          </div>
-          <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-neutral-100">
-            <div
-              className="h-full rounded-full bg-[#CBFC01] transition-all duration-500"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
+        <div className="mt-4">
+          <LearningProgressBadge progress={progress} size="md" />
         </div>
       </section>
     </div>

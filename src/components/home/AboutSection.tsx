@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { COURSES } from "@/data/courses";
 import { CourseCard } from "@/components/ui/CourseCard";
 import { HappyStudentsBadge } from "@/components/ui/HappyStudentsBadge";
+import { LearningProgressBadge } from "@/components/ui/LearningProgressBadge";
 
 const INSTRUCTOR_BENEFITS = [
   "Share Your Expertise",
@@ -139,17 +140,9 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.25 }}
-                className="absolute right-0 bottom-12 z-30 w-[190px] rounded-[16px] bg-white p-4 shadow-[0_16px_32px_rgba(0,0,0,0.1)] sm:right-2 sm:bottom-64 sm:w-[220px]"
+                className="absolute right-0 bottom-12 z-30 w-[190px] sm:right-2 sm:bottom-64 sm:w-[220px]"
               >
-                <p className="font-sans text-xs font-medium text-[#242528] sm:text-[14px]">
-                  Learning Progress
-                </p>
-                <p className="font-heading mt-1 text-3xl font-semibold tracking-[-0.01em] text-[#242528] sm:text-[44px] sm:leading-[1.15]">
-                  55%
-                </p>
-                <div className="mt-2.5 h-2 w-full overflow-hidden rounded-full bg-[#F6F6F6]">
-                  <div className="h-full w-[55%] rounded-full bg-[#D4FB20]" />
-                </div>
+                <LearningProgressBadge progress={55} size="md" />
               </motion.div>
             </div>
           </motion.div>

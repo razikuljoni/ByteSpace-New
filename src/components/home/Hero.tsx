@@ -4,14 +4,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 import { HappyStudentsBadge } from "@/components/ui/HappyStudentsBadge";
+import { LearningProgressBadge } from "@/components/ui/LearningProgressBadge";
+import { BlueGridBackground } from "@/components/ui/BlueGridBackground";
 
 export function Hero() {
   return (
-    <section className="bg-brand relative w-full overflow-hidden pt-28 pb-0 sm:pt-20 md:pt-28 lg:pt-32">
-      {/* Blueprint Grid Lines Overlay - Full Bleed */}
-      <div className="bg-grid-pattern pointer-events-none absolute inset-0 z-0 opacity-70" />
-      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_0%,rgba(40,114,255,0.35),rgba(0,59,226,0))]" />
-
+    <BlueGridBackground as="section" className="pt-28 pb-0 sm:pt-20 md:pt-28 lg:pt-32">
       {/* Hero Header Content */}
       <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-12">
         <motion.div
@@ -236,17 +234,9 @@ export function Hero() {
           initial={{ opacity: 0, x: 20, y: 10 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 0.6, delay: 0.55 }}
-          className="absolute top-[32%] right-[20%] z-20 hidden min-w-[170px] rounded-2xl border border-neutral-100/90 bg-white p-3.5 shadow-[0_16px_36px_rgba(0,0,0,0.14)] sm:block md:top-[60%] md:right-[22%] md:min-w-[190px] md:p-4 lg:right-[32%]"
+          className="absolute top-[32%] right-[20%] z-20 hidden min-w-[170px] sm:block md:top-[60%] md:right-[22%] md:min-w-[190px] lg:right-[32%]"
         >
-          <p className="font-sans text-[11px] font-medium text-neutral-500 md:text-xs">
-            Learning Progress
-          </p>
-          <p className="font-heading text-2xl font-bold tracking-tight text-neutral-900 md:text-3xl">
-            55%
-          </p>
-          <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-neutral-100">
-            <div className="bg-accent h-full w-[55%] rounded-full" />
-          </div>
+          <LearningProgressBadge progress={55} size="sm" />
         </motion.div>
 
         {/* Floating Card 3: Happy Students (Bottom-Left Overlapping Student) */}
@@ -259,6 +249,6 @@ export function Hero() {
           <HappyStudentsBadge layout="stacked" />
         </motion.div>
       </div>
-    </section>
+    </BlueGridBackground>
   );
 }
