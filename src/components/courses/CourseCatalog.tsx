@@ -54,7 +54,6 @@ export function CourseCatalog() {
       for (let i = 0; i < COURSES.length; i++) {
         expandedPool.push({
           ...COURSES[i],
-          id: `${COURSES[i].id}-p${r}-${i}`,
         });
       }
     }
@@ -150,7 +149,7 @@ export function CourseCatalog() {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               {displayedCourses.map((course, idx) => (
                 <CourseCard
-                  key={course.id || idx}
+                  key={`${course.id}-p${currentPage}-${idx}`}
                   course={course}
                   priority={idx < 3 && currentPage === 1}
                 />
