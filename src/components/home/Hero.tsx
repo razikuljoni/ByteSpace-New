@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
@@ -9,6 +11,19 @@ import { BlueGridBackground } from "@/components/ui/BlueGridBackground";
 import { FloatingShape } from "@/components/ui/FloatingShape";
 
 export function Hero() {
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const query = searchQuery.trim();
+    if (query) {
+      router.push(`/courses?q=${encodeURIComponent(query)}`);
+    } else {
+      router.push("/courses");
+    }
+  };
+
   return (
     <BlueGridBackground as="section" className="pt-28 pb-0 sm:pt-20 md:pt-28 lg:pt-32">
       {/* Hero Header Content */}
@@ -32,13 +47,15 @@ export function Hero() {
           {/* Search Input and Button */}
           <div className="mx-auto mt-8 max-w-xl">
             <form
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSearch}
               className="flex items-center justify-center gap-3 sm:gap-3.5"
             >
               <div className="focus-within:ring-accent flex flex-1 items-center rounded-full bg-white px-5 py-3 shadow-xl transition-all focus-within:ring-2">
                 <Search className="mr-2.5 h-5 w-5 shrink-0 text-neutral-400" />
                 <input
                   type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Course, topic, creator"
                   className="w-full bg-transparent text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none md:text-base"
                 />

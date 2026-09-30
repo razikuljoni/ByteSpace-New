@@ -15,7 +15,8 @@ const COURSES_PER_PAGE = 18;
 export function CourseCatalog() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get("category") || "Featured";
-  const initialQuery = searchParams.get("q") || "";
+  const initialQuery =
+    searchParams.get("q") || searchParams.get("query") || searchParams.get("search") || "";
 
   const [searchQuery, setSearchQuery] = useState(initialQuery);
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
