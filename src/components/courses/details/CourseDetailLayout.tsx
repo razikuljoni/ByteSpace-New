@@ -3,10 +3,11 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { BarChart2, Star, Users, Share2, Play } from "lucide-react";
+import { BarChart2, Users, Share2, Play } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { BlueGridBackground } from "@/components/ui/BlueGridBackground";
+import { StarRating } from "@/components/ui/StarRating";
 import { CourseDetailTabs } from "./CourseDetailTabs";
 import { CourseDetailSidebar } from "./CourseDetailSidebar";
 import { CourseDetailData } from "@/data/courseDetailData";
@@ -55,8 +56,8 @@ export function CourseDetailLayout({ course, activeTab, children }: CourseDetail
               </span>
 
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1 text-xs font-medium text-white backdrop-blur-xs">
-                <Star className="h-3.5 w-3.5 fill-[#CBFC01] text-[#CBFC01]" />
-                {course.rating} ({course.reviewsCount} reviews)
+                <StarRating rating={course.rating} singleStar showNumber size="sm" variant="lime" />
+                <span>({course.reviewsCount} reviews)</span>
               </span>
 
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1 text-xs font-medium text-white backdrop-blur-xs">

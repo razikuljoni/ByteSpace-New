@@ -24,7 +24,7 @@ const FOOTER_COLUMNS = [
   },
   {
     links: [
-      { label: "Become a Creator", href: "/creator/register" },
+      { label: "Become a Creator", href: "/register?role=creator" },
       { label: "Affiliate Program", href: "/affiliate" },
       { label: "Contact", href: "/contact" },
       { label: "Help", href: "/help" },
@@ -77,7 +77,7 @@ export function Footer() {
                 type="submit"
                 className="bg-accent hover:bg-accent/90 shrink-0 rounded-full px-7 py-3 font-sans text-sm font-medium text-neutral-950 shadow-xs transition-all active:scale-95"
               >
-                Search
+                Subscribe
               </button>
             </form>
 

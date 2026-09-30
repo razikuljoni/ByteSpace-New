@@ -5,9 +5,11 @@ export interface StarRatingProps {
   rating: number;
   maxStars?: number;
   showNumber?: boolean;
+  numberClassName?: string;
   reviewsCount?: string | number;
   size?: "xs" | "sm" | "md";
   variant?: "lime" | "dark" | "gray";
+  singleStar?: boolean;
   className?: string;
 }
 
@@ -15,9 +17,11 @@ export function StarRating({
   rating,
   maxStars,
   showNumber = false,
+  numberClassName,
   reviewsCount,
   size = "sm",
   variant = "lime",
+  singleStar = false,
   className = "",
 }: StarRatingProps) {
   const sizeClasses = {
@@ -41,12 +45,12 @@ export function StarRating({
     },
   }[variant];
 
-  const count = maxStars ?? rating;
+  const count = singleStar ? 1 : (maxStars ?? Math.floor(rating));
 
   return (
     <div className={`flex items-center gap-1 ${className}`}>
       {showNumber && (
-        <span className="font-semibold">
+        <span className={numberClassName || "font-semibold"}>
           {typeof rating === "number" ? rating.toFixed(1) : rating}
         </span>
       )}
