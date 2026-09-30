@@ -15,8 +15,12 @@ export function BlueGridBackground({
   glow = true,
   as: Component = "div",
 }: BlueGridBackgroundProps) {
+  const hasPosition = /\b(absolute|fixed|sticky|static)\b/.test(className);
+
   return (
-    <Component className={`bg-brand relative w-full overflow-hidden ${className}`}>
+    <Component
+      className={`bg-brand ${hasPosition ? "" : "relative"}w-full overflow-hidden ${className}`}
+    >
       {/* Blueprint Grid Lines Overlay - Full Bleed */}
       <div
         className={`bg-grid-pattern pointer-events-none absolute inset-0 z-0 opacity-70 ${overlayClassName}`}
