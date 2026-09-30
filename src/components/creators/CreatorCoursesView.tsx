@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { BookOpen } from "lucide-react";
 import { Course } from "@/types/course";
 import { CourseFilters } from "@/components/courses/CourseFilters";
 import { CourseCard } from "@/components/ui/CourseCard";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { COURSE_CATEGORIES } from "@/data/courses";
 
 interface CreatorCoursesViewProps {
@@ -83,22 +83,13 @@ export function CreatorCoursesView({ initialCourses }: CreatorCoursesViewProps) 
           ))}
         </div>
       ) : (
-        <div className="mt-12 flex flex-col items-center justify-center rounded-2xl border border-dashed border-neutral-300 bg-white p-12 text-center shadow-xs">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-neutral-100 text-neutral-400">
-            <BookOpen className="h-6 w-6" />
-          </div>
-          <h3 className="font-heading mt-4 text-lg font-bold text-neutral-900">No courses found</h3>
-          <p className="mt-1 max-w-sm font-sans text-xs text-neutral-500 sm:text-sm">
-            Try adjusting your level or category filters to discover more courses by this creator.
-          </p>
-          <button
-            type="button"
-            onClick={handleResetFilters}
-            className="mt-5 rounded-full bg-neutral-950 px-5 py-2 font-sans text-xs font-semibold text-white transition-all hover:bg-neutral-800"
-          >
-            Reset Filters
-          </button>
-        </div>
+        <EmptyState
+          className="mt-12"
+          title="No courses found"
+          description="Try adjusting your level or category filters to discover more courses by this creator."
+          actionLabel="Reset Filters"
+          onAction={handleResetFilters}
+        />
       )}
     </div>
   );

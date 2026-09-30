@@ -2,8 +2,9 @@
 
 import { useState, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
-import { ChevronLeft, ChevronRight, BookOpen } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CourseCard } from "@/components/ui/CourseCard";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { CourseSearchHero } from "./CourseSearchHero";
 import { CourseFilters } from "./CourseFilters";
 import { COURSES, COURSE_CATEGORIES } from "@/data/courses";
@@ -156,29 +157,16 @@ export function CourseCatalog() {
             </div>
           ) : (
             /* Empty State */
-            <div className="flex flex-col items-center justify-center rounded-3xl border border-dashed border-neutral-300 bg-white px-6 py-20 text-center">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-neutral-100 text-neutral-400">
-                <BookOpen className="h-7 w-7" />
-              </div>
-              <h3 className="font-heading mt-4 text-lg font-bold text-neutral-900">
-                No courses found
-              </h3>
-              <p className="mt-1.5 max-w-sm text-sm text-neutral-500">
-                We couldn&apos;t find any courses matching your criteria. Try adjusting your search
-                or filters.
-              </p>
-              <button
-                type="button"
-                onClick={() => {
-                  setSearchQuery("");
-                  setSelectedCategory("Featured");
-                  setSelectedLevel("All Level");
-                }}
-                className="mt-6 rounded-full bg-[#CBFC01] px-6 py-2.5 font-sans text-sm font-semibold text-neutral-950 shadow-xs transition-all hover:bg-[#CBFC01]/90"
-              >
-                Reset Filters
-              </button>
-            </div>
+            <EmptyState
+              title="No courses found"
+              description="We couldn't find any courses matching your criteria. Try adjusting your search or filters."
+              actionLabel="Reset Filters"
+              onAction={() => {
+                setSearchQuery("");
+                setSelectedCategory("Featured");
+                setSelectedLevel("All Level");
+              }}
+            />
           )}
         </div>
 
