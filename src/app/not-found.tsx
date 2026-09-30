@@ -1,18 +1,13 @@
 import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { BlueGridBackground } from "@/components/ui/BlueGridBackground";
 
 export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col justify-between bg-[#003BE2] font-sans text-white">
       {/* 1. Blueprint Grid Background Hero */}
-      <div className="relative flex flex-1 flex-col overflow-hidden">
-        {/* Background Grid & Glow Overlay */}
-        <div className="pointer-events-none absolute inset-0 z-0">
-          <div className="bg-grid-pattern absolute inset-0 opacity-70" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_0%,rgba(40,114,255,0.35),rgba(0,59,226,0))]" />
-        </div>
-
+      <BlueGridBackground className="flex flex-1 flex-col">
         {/* Global Navbar */}
         <Navbar />
 
@@ -45,7 +40,7 @@ export default function NotFound() {
             </div>
           </div>
         </main>
-      </div>
+      </BlueGridBackground>
 
       {/* 2. Global Footer */}
       <Footer />
