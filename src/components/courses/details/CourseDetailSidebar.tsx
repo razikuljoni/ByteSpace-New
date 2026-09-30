@@ -27,7 +27,7 @@ export function CourseDetailSidebar({ course }: CourseDetailSidebarProps) {
   };
 
   return (
-    <aside className="w-full rounded-3xl border border-neutral-200 bg-white p-6 shadow-xl sm:p-7">
+    <aside className="xs:p-5 w-full rounded-2xl border border-neutral-200 bg-white p-4.5 shadow-xl sm:rounded-3xl sm:p-7">
       {/* 1. Lessons Header & Preview List */}
       <div>
         <h3 className="font-heading text-lg font-bold text-neutral-950 sm:text-xl">

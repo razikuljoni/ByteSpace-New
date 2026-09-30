@@ -19,10 +19,10 @@ export function CourseSearchHero({
   categories,
 }: CourseSearchHeroProps) {
   return (
-    <BlueGridBackground className="pt-32 pb-14 sm:pt-36 sm:pb-16 lg:pt-40 lg:pb-20">
-      <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
+    <BlueGridBackground className="pt-28 pb-12 sm:pt-36 sm:pb-16 lg:pt-40 lg:pb-20">
+      <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         {/* Main Title */}
-        <h1 className="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[44px]">
+        <h1 className="font-heading xs:text-3xl text-2xl font-bold tracking-tight text-white sm:text-4xl lg:text-[44px]">
           Find Your Next Course
         </h1>
 
@@ -46,7 +46,7 @@ export function CourseSearchHero({
             <select
               value={selectedCategory}
               onChange={(e) => onCategoryChange(e.target.value)}
-              className="cursor-pointer appearance-none rounded-full bg-[#CBFC01] py-2.5 pr-6 pl-4 font-sans text-xs font-semibold text-neutral-950 shadow-md transition-all hover:bg-[#CBFC01]/90 focus:outline-none sm:py-3 sm:pr-6 sm:pl-3 sm:text-sm"
+              className="w-30 cursor-pointer appearance-none rounded-full bg-[#CBFC01] py-2.5 pr-6 pl-4 font-sans text-xs font-semibold text-neutral-950 shadow-md transition-all hover:bg-[#CBFC01]/90 focus:outline-none sm:py-3 sm:pr-6 sm:pl-3 sm:text-sm"
               aria-label="Filter by course category"
             >
               <option value="All">Courses</option>

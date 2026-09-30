@@ -36,7 +36,7 @@ const FOOTER_COLUMNS = [
 export function Footer() {
   return (
     <footer className="w-full bg-white pt-16 pb-12 sm:pt-20 sm:pb-16">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main Footer Row */}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left Column: Brand & Newsletter */}
@@ -66,7 +66,7 @@ export function Footer() {
             {/* Newsletter Input Form */}
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="mt-6 flex w-full max-w-md items-center gap-3"
+              className="xs:flex-row xs:items-center mt-6 flex w-full max-w-md flex-row items-stretch gap-3 lg:flex-col"
             >
               <input
                 type="email"
@@ -76,7 +76,7 @@ export function Footer() {
               />
               <button
                 type="submit"
-                className="bg-accent hover:bg-accent/90 shrink-0 rounded-full px-7 py-3 font-sans text-sm font-medium text-neutral-950 shadow-xs transition-all active:scale-95"
+                className="bg-accent hover:bg-accent/90 shrink-0 rounded-full px-7 py-3 text-center font-sans text-sm font-medium text-neutral-950 shadow-xs transition-all active:scale-95"
               >
                 Subscribe
               </button>

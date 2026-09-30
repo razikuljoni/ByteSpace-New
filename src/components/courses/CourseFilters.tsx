@@ -38,7 +38,7 @@ export function CourseFilters({
               onCategoryChange("Featured");
               onLevelChange("All Level");
             }}
-            className="flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 font-sans text-xs font-medium text-neutral-800 transition-colors hover:border-neutral-300 hover:bg-neutral-50 sm:text-sm"
+            className="flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1.5 font-sans text-xs font-medium text-neutral-800 transition-colors hover:border-neutral-300 hover:bg-neutral-50 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
           >
             <SlidersHorizontal className="h-3.5 w-3.5 text-neutral-600" />
             <span>Filter</span>
@@ -46,11 +46,11 @@ export function CourseFilters({
 
           {/* Level Dropdown with GraduationCap Icon */}
           <div className="relative flex items-center">
-            <GraduationCap className="pointer-events-none absolute top-1/2 left-3.5 h-3.5 w-3.5 -translate-y-1/2 text-neutral-600" />
+            <GraduationCap className="pointer-events-none absolute top-1/2 left-3 h-3.5 w-3.5 -translate-y-1/2 text-neutral-600 sm:left-3.5" />
             <select
               value={selectedLevel}
               onChange={(e) => onLevelChange(e.target.value)}
-              className="cursor-pointer appearance-none rounded-full border border-neutral-200 bg-white py-2 pr-8 pl-9 font-sans text-xs font-medium text-neutral-800 transition-colors hover:border-neutral-300 hover:bg-neutral-50 focus:outline-none sm:text-sm"
+              className="cursor-pointer appearance-none rounded-full border border-neutral-200 bg-white py-1.5 pr-7 pl-8 font-sans text-xs font-medium text-neutral-800 transition-colors hover:border-neutral-300 hover:bg-neutral-50 focus:outline-none sm:py-2 sm:pr-8 sm:pl-9 sm:text-sm"
               aria-label="Filter by difficulty level"
             >
               <option value="All Level">All Level</option>
@@ -60,16 +60,16 @@ export function CourseFilters({
                 </option>
               ))}
             </select>
-            <ChevronDown className="pointer-events-none absolute top-1/2 right-2.5 h-3.5 w-3.5 -translate-y-1/2 text-neutral-500" />
+            <ChevronDown className="pointer-events-none absolute top-1/2 right-2 h-3.5 w-3.5 -translate-y-1/2 text-neutral-500 sm:right-2.5" />
           </div>
 
           {/* Category Dropdown with Shapes Icon */}
           <div className="relative flex items-center">
-            <Shapes className="pointer-events-none absolute top-1/2 left-3.5 h-3.5 w-3.5 -translate-y-1/2 text-neutral-600" />
+            <Shapes className="pointer-events-none absolute top-1/2 left-3 h-3.5 w-3.5 -translate-y-1/2 text-neutral-600 sm:left-3.5" />
             <select
               value={selectedCategory}
               onChange={(e) => onCategoryChange(e.target.value)}
-              className="cursor-pointer appearance-none rounded-full border border-neutral-200 bg-white py-2 pr-8 pl-9 font-sans text-xs font-medium text-neutral-800 transition-colors hover:border-neutral-300 hover:bg-neutral-50 focus:outline-none sm:text-sm"
+              className="cursor-pointer appearance-none rounded-full border border-neutral-200 bg-white py-1.5 pr-7 pl-8 font-sans text-xs font-medium text-neutral-800 transition-colors hover:border-neutral-300 hover:bg-neutral-50 focus:outline-none sm:py-2 sm:pr-8 sm:pl-9 sm:text-sm"
               aria-label="Filter by category"
             >
               <option value="All">Category</option>
@@ -79,17 +79,17 @@ export function CourseFilters({
                 </option>
               ))}
             </select>
-            <ChevronDown className="pointer-events-none absolute top-1/2 right-2.5 h-3.5 w-3.5 -translate-y-1/2 text-neutral-500" />
+            <ChevronDown className="pointer-events-none absolute top-1/2 right-2 h-3.5 w-3.5 -translate-y-1/2 text-neutral-500 sm:right-2.5" />
           </div>
         </div>
 
         {/* Right Sort Dropdown with ArrowUpDown Icon */}
         <div className="relative flex items-center">
-          <ArrowUpDown className="pointer-events-none absolute top-1/2 left-3.5 h-3.5 w-3.5 -translate-y-1/2 text-neutral-600" />
+          <ArrowUpDown className="pointer-events-none absolute top-1/2 left-3 h-3.5 w-3.5 -translate-y-1/2 text-neutral-600 sm:left-3.5" />
           <select
             value={selectedSort}
             onChange={(e) => onSortChange(e.target.value)}
-            className="cursor-pointer appearance-none rounded-full border border-neutral-200 bg-white py-2 pr-8 pl-9 font-sans text-xs font-medium text-neutral-800 transition-colors hover:border-neutral-300 hover:bg-neutral-50 focus:outline-none sm:text-sm"
+            className="cursor-pointer appearance-none rounded-full border border-neutral-200 bg-white py-1.5 pr-7 pl-8 font-sans text-xs font-medium text-neutral-800 transition-colors hover:border-neutral-300 hover:bg-neutral-50 focus:outline-none sm:py-2 sm:pr-8 sm:pl-9 sm:text-sm"
             aria-label="Sort courses"
           >
             <option value="relevant">Most Relevant</option>
@@ -98,7 +98,7 @@ export function CourseFilters({
             <option value="price-low">Price: Low to High</option>
             <option value="price-high">Price: High to Low</option>
           </select>
-          <ChevronDown className="pointer-events-none absolute top-1/2 right-2.5 h-3.5 w-3.5 -translate-y-1/2 text-neutral-500" />
+          <ChevronDown className="pointer-events-none absolute top-1/2 right-2 h-3.5 w-3.5 -translate-y-1/2 text-neutral-500 sm:right-2.5" />
         </div>
       </div>
 

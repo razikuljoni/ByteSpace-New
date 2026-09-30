@@ -8,7 +8,7 @@ import { FloatingShape } from "@/components/ui/FloatingShape";
 export function CreatorCTA() {
   return (
     <section className="relative w-full">
-      <BlueGridBackground className="py-20 sm:py-28 lg:py-36">
+      <BlueGridBackground className="py-16 sm:py-28 lg:py-36">
         {/* ================= 3D PERIMETER SHAPES (FLUSH CROPPED ASSETS) ================= */}
 
         {/* 1. Top-Left Cropped Lime Helix */}
@@ -17,7 +17,7 @@ export function CreatorCTA() {
           alt="Decorative 3D lime helix"
           width={240}
           height={300}
-          className="pointer-events-none absolute -top-36 left-0 z-10 w-24 sm:w-36 md:w-44 lg:w-56"
+          className="pointer-events-none absolute -top-36 left-0 z-10 w-20 sm:w-36 md:w-44 lg:w-56"
           imageClassName="h-auto w-full object-contain drop-shadow-2xl"
           floatY={0}
         />
@@ -28,7 +28,7 @@ export function CreatorCTA() {
           alt="Decorative white zigzag"
           width={180}
           height={200}
-          className="pointer-events-none absolute -top-28 left-[11%] z-10 w-14 sm:left-[13%] sm:w-20 md:w-28 lg:left-[14%]"
+          className="pointer-events-none absolute -top-28 left-[11%] z-10 hidden w-14 sm:left-[13%] sm:block sm:w-20 md:w-28 lg:left-[14%]"
           floatY={8}
           floatRotate={-3}
           duration={7}
@@ -41,7 +41,7 @@ export function CreatorCTA() {
           alt="Decorative white cone"
           width={140}
           height={180}
-          className="pointer-events-none absolute bottom-4 left-0 z-10 w-14 sm:bottom-6 sm:left-0 sm:w-20 md:w-28 lg:w-32"
+          className="pointer-events-none absolute bottom-4 left-0 z-10 w-12 sm:bottom-6 sm:left-0 sm:w-20 md:w-28 lg:w-32"
           floatY={-6}
           duration={5}
           floatDelay={1}
@@ -53,7 +53,7 @@ export function CreatorCTA() {
           alt="Decorative lime torus ring"
           width={240}
           height={240}
-          className="pointer-events-none absolute -bottom-36 left-[4%] z-10 w-28 sm:left-[6%] sm:w-40 md:w-48 lg:w-56"
+          className="pointer-events-none absolute -bottom-36 left-[4%] z-10 w-20 sm:left-[6%] sm:w-40 md:w-48 lg:w-56"
           imageClassName="h-auto w-full object-contain drop-shadow-2xl"
           floatY={0}
         />
@@ -64,7 +64,7 @@ export function CreatorCTA() {
           alt="Decorative lime pyramid"
           width={160}
           height={160}
-          className="pointer-events-none absolute top-4 right-[11%] z-10 w-16 sm:-top-30 sm:right-[14%] sm:w-24 md:w-32 lg:right-[15%] lg:w-36"
+          className="pointer-events-none absolute top-4 right-[11%] z-10 hidden w-16 sm:-top-30 sm:right-[14%] sm:block sm:w-24 md:w-32 lg:right-[15%] lg:w-36"
           imageClassName="h-auto w-full object-contain drop-shadow-2xl"
           floatY={-8}
           floatRotate={-2}
@@ -78,7 +78,7 @@ export function CreatorCTA() {
           alt="Decorative white cylinder"
           width={240}
           height={320}
-          className="pointer-events-none absolute -top-14 right-0 z-10 w-24 sm:w-36 md:w-44 lg:w-56"
+          className="pointer-events-none absolute -top-14 right-0 z-10 hidden w-20 sm:w-36 md:w-44 lg:block lg:w-56"
           imageClassName="h-auto w-full object-contain drop-shadow-2xl"
           floatY={6}
           duration={7}
@@ -91,36 +91,36 @@ export function CreatorCTA() {
           alt="Decorative lime helix"
           width={240}
           height={300}
-          className="pointer-events-none absolute right-0 -bottom-36 z-10 w-24 sm:w-36 md:w-44 lg:w-56"
+          className="pointer-events-none absolute right-0 -bottom-36 z-10 w-20 sm:w-36 md:w-44 lg:w-56"
           imageClassName="h-auto w-full object-contain drop-shadow-2xl"
           floatY={0}
         />
 
         {/* ================= CENTER CTA CONTENT ================= */}
-        <div className="relative z-20 mx-auto max-w-4xl px-6 text-center lg:px-8">
+        <div className="relative z-20 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-3xl font-semibold tracking-[-0.01em] text-white sm:text-4xl md:text-5xl md:leading-[1.18] lg:text-[52px]">
+            <h2 className="font-heading xs:text-3xl text-2xl font-semibold tracking-[-0.01em] text-white sm:text-4xl md:text-5xl md:leading-[1.18] lg:text-[52px]">
               Unlock Your Potential as a
               <br />
               Creator with ByteSpace
             </h2>
 
-            <p className="mx-auto mt-6 max-w-2xl font-sans text-sm leading-relaxed text-white/90 sm:text-base sm:leading-[160%] md:max-w-3xl">
+            <p className="xs:text-sm mx-auto mt-4 max-w-2xl font-sans text-xs leading-relaxed text-white/90 sm:mt-6 sm:text-base sm:leading-[160%] md:max-w-3xl">
               Experience the collaboration of numerous creators and an expanding selection of
               courses. Register now and become a part of a community comprising over 10,000 local
               and international creators. Utilize our Course Editor, and showcase your expertise by
               publishing your finest course on the ByteSpace Course Library.
             </p>
 
-            <div className="mt-8 sm:mt-10">
+            <div className="mt-7 sm:mt-10">
               <Link
                 href="/register?role=creator"
-                className="bg-accent hover:bg-accent/90 inline-flex items-center justify-center rounded-full px-8 py-3.5 font-sans text-sm font-medium text-neutral-950 shadow-lg transition-all active:scale-95 sm:text-base"
+                className="bg-accent hover:bg-accent/90 inline-flex items-center justify-center rounded-full px-6 py-3 font-sans text-xs font-semibold text-neutral-950 shadow-lg transition-all active:scale-95 sm:px-8 sm:py-3.5 sm:text-base sm:font-medium"
               >
                 Join as Creator
               </Link>
