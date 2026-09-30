@@ -131,7 +131,7 @@ export function CourseCatalog() {
       />
 
       {/* 2. Main Content Catalog Container */}
-      <section className="mx-auto max-w-7xl px-6 py-10 sm:py-14 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-14 lg:px-8">
         {/* Filters and Categories Toolbar */}
         <CourseFilters
           selectedCategory={selectedCategory}
@@ -173,16 +173,16 @@ export function CourseCatalog() {
 
         {/* 4. Bottom Pagination (Arrows + 1 2 3 4 5) */}
         {totalPages > 1 && (
-          <div className="mt-16 flex items-center justify-center gap-3 sm:mt-20 sm:gap-4">
+          <div className="xs:gap-3 mt-12 flex items-center justify-center gap-1.5 sm:mt-20 sm:gap-4">
             {/* Prev Arrow */}
             <button
               type="button"
               onClick={() => goToPage(currentPage - 1)}
               disabled={currentPage === 1}
               aria-label="Previous page"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-600 transition-colors hover:border-neutral-400 hover:bg-neutral-50 disabled:cursor-not-allowed disabled:opacity-35 sm:h-10 sm:w-10"
+              className="xs:h-9 xs:w-9 flex h-8 w-8 items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-600 transition-colors hover:border-neutral-400 hover:bg-neutral-50 disabled:cursor-not-allowed disabled:opacity-35 sm:h-10 sm:w-10"
             >
-              <ChevronLeft className="h-4 w-4" />
+              <ChevronLeft className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             </button>
 
             {/* Numeric Page Buttons */}
@@ -196,7 +196,7 @@ export function CourseCatalog() {
                     onClick={() => goToPage(pageNum)}
                     aria-label={`Go to page ${pageNum}`}
                     aria-current={isActive ? "page" : undefined}
-                    className={`flex h-9 w-9 items-center justify-center rounded-full font-sans text-xs transition-colors sm:h-10 sm:w-10 sm:text-sm ${
+                    className={`xs:h-9 xs:w-9 flex h-8 w-8 items-center justify-center rounded-full font-sans text-xs transition-colors sm:h-10 sm:w-10 sm:text-sm ${
                       isActive
                         ? "font-bold text-neutral-950"
                         : "font-normal text-neutral-500 hover:text-neutral-900"
@@ -214,9 +214,9 @@ export function CourseCatalog() {
               onClick={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages}
               aria-label="Next page"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-600 transition-colors hover:border-neutral-400 hover:bg-neutral-50 disabled:cursor-not-allowed disabled:opacity-35 sm:h-10 sm:w-10"
+              className="xs:h-9 xs:w-9 flex h-8 w-8 items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-600 transition-colors hover:border-neutral-400 hover:bg-neutral-50 disabled:cursor-not-allowed disabled:opacity-35 sm:h-10 sm:w-10"
             >
-              <ChevronRight className="h-4 w-4" />
+              <ChevronRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             </button>
           </div>
         )}

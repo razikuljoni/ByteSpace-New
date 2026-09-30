@@ -15,7 +15,7 @@ interface AuthLayoutProps {
 export function AuthLayout({ title, description, children }: AuthLayoutProps) {
   return (
     <BlueGridBackground className="min-h-screen" glow={true}>
-      <div className="mx-auto flex min-h-screen max-w-7xl flex-col justify-between px-6 py-8 sm:px-8 lg:px-12">
+      <div className="mx-auto flex min-h-screen max-w-7xl flex-col justify-between px-4 py-6 sm:px-8 sm:py-8 lg:px-12">
         {/* Top Header: ByteSpace Logo */}
         <header className="flex items-center">
           <Link
@@ -35,19 +35,19 @@ export function AuthLayout({ title, description, children }: AuthLayoutProps) {
         </header>
 
         {/* Main Content Area: 2-Column Responsive Grid */}
-        <main className="my-auto py-8 lg:py-12">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
+        <main className="my-auto py-6 sm:py-8 lg:py-12">
+          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-16">
             {/* Left Column: Heading + Visual Composition */}
             <div className="flex flex-col items-start lg:col-span-6 xl:col-span-6">
               <h1 className="font-heading text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
                 {title}
               </h1>
-              <p className="mt-3 max-w-lg font-sans text-sm leading-relaxed text-white/80 sm:text-base">
+              <p className="mt-2.5 max-w-lg font-sans text-xs leading-relaxed text-white/80 sm:mt-3 sm:text-sm md:text-base">
                 {description}
               </p>
 
-              {/* Layered Composition */}
-              <div className="w-full">
+              {/* Layered Composition (Desktop / Tablet-wide only) */}
+              <div className="hidden w-full lg:block">
                 <AuthVisualComposition />
               </div>
             </div>

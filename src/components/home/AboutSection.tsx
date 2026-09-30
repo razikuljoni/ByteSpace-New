@@ -19,7 +19,7 @@ export function AboutSection() {
   const figmaCourse = COURSES[0];
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#FAFAFA] pt-20">
+    <section className="relative w-full overflow-hidden bg-[#FAFAFA] py-10 md:pt-20">
       {/* ================= ATMOSPHERIC GLOW ELLIPSES BACKGROUND ================= */}
       {/* Top-Left Lime Glow */}
       <div
@@ -65,10 +65,10 @@ export function AboutSection() {
             transition={{ duration: 0.6 }}
             className="flex flex-col items-start lg:col-span-6"
           >
-            <h2 className="font-heading text-3xl font-semibold tracking-[-0.01em] text-[#242528] sm:text-4xl md:text-[44px] md:leading-[1.2]">
+            <h2 className="font-heading xs:text-3xl text-2xl font-semibold tracking-[-0.01em] text-[#242528] sm:text-4xl md:text-[44px] md:leading-[1.2]">
               Your Path to Professional Growth Starts Here!
             </h2>
-            <p className="mt-6 max-w-xl font-sans text-base leading-[160%] text-[#4B4C53] sm:text-lg">
+            <p className="mt-4 max-w-xl font-sans text-sm leading-[160%] text-[#4B4C53] sm:mt-6 sm:text-base md:text-lg">
               Explore our curated selection of courses tailored to enhance your capabilities and
               accelerate your career journey. Whether you are looking to sharpen specific skills,
               gain industry expertise, or embark on a new career path entirely, we have the
@@ -76,29 +76,35 @@ export function AboutSection() {
             </p>
 
             {/* Stats Row */}
-            <div className="mt-10 flex flex-wrap items-end gap-10 sm:gap-14">
+            <div className="xs:gap-10 mt-8 flex flex-wrap items-end gap-6 sm:mt-10 sm:gap-14">
               <div className="flex flex-col items-start">
-                <span className="font-heading text-3xl font-medium tracking-[-0.01em] text-[#003BE2] sm:text-[36px]">
+                <span className="font-heading xs:text-3xl text-2xl font-medium tracking-[-0.01em] text-[#003BE2] sm:text-[36px]">
                   12K
                 </span>
-                <span className="font-sans text-base text-[#4B4C53] sm:text-lg">Students</span>
+                <span className="font-sans text-sm text-[#4B4C53] sm:text-base md:text-lg">
+                  Students
+                </span>
               </div>
               <div className="flex flex-col items-start">
-                <span className="font-heading text-3xl font-medium tracking-[-0.01em] text-[#003BE2] sm:text-[36px]">
+                <span className="font-heading xs:text-3xl text-2xl font-medium tracking-[-0.01em] text-[#003BE2] sm:text-[36px]">
                   70+
                 </span>
-                <span className="font-sans text-base text-[#4B4C53] sm:text-lg">Courses</span>
+                <span className="font-sans text-sm text-[#4B4C53] sm:text-base md:text-lg">
+                  Courses
+                </span>
               </div>
               <div className="flex flex-col items-start">
-                <span className="font-heading text-3xl font-medium tracking-[-0.01em] text-[#003BE2] sm:text-[36px]">
+                <span className="font-heading xs:text-3xl text-2xl font-medium tracking-[-0.01em] text-[#003BE2] sm:text-[36px]">
                   16
                 </span>
-                <span className="font-sans text-base text-[#4B4C53] sm:text-lg">Creators</span>
+                <span className="font-sans text-sm text-[#4B4C53] sm:text-base md:text-lg">
+                  Creators
+                </span>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Visual Stage (Width 621px, Height 552px in Figma) */}
+          {/* Right Visual Stage */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -106,14 +112,14 @@ export function AboutSection() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="relative flex items-center justify-center lg:col-span-6"
           >
-            <div className="relative h-[500px] w-full max-w-[620px] sm:h-[580px] lg:h-[600px]">
+            <div className="relative h-[440px] w-full max-w-[620px] sm:h-[580px] lg:h-[600px]">
               {/* Lime 3D Coil Behind Student (Top-Right) */}
               <FloatingShape
                 src="/assets/images/shape-helix-right-lime.png"
                 alt="3D lime helix"
                 width={180}
                 height={220}
-                className="pointer-events-none absolute top-4 right-4 z-40 w-28 sm:top-28 sm:right-2 sm:w-36"
+                className="pointer-events-none absolute top-35 right-1 z-40 w-28 sm:top-28 sm:right-2 sm:w-36"
                 imageClassName="h-auto w-full object-contain"
                 floatY={-8}
                 floatRotate={2}
@@ -121,12 +127,12 @@ export function AboutSection() {
               />
 
               {/* Background CourseCard (Top-Left) */}
-              <div className="absolute top-2 left-0 z-10 w-[260px] drop-shadow-xl sm:top-4 sm:left-0 sm:w-[300px] md:w-[330px]">
+              <div className="xs:w-[260px] absolute top-2 left-0 z-10 w-full drop-shadow-xl sm:top-4 sm:left-0 sm:w-[300px] md:w-[330px]">
                 <CourseCard course={figmaCourse} />
               </div>
 
               {/* Foreground Student Holding Laptop (Enlarged Hero Figure) */}
-              <div className="pointer-events-none absolute -right-2 bottom-0 z-20 w-[340px] sm:-right-4 sm:w-[440px] md:-right-6 md:w-[490px] lg:w-[530px]">
+              <div className="xs:w-[320px] pointer-events-none absolute -right-7 bottom-0 z-20 w-full sm:-right-4 sm:w-[440px] md:-right-6 md:w-[490px] lg:w-[530px]">
                 <Image
                   src="/assets/images/about-instructor-1.png"
                   alt="Student with laptop and headphones"
@@ -142,16 +148,16 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.25 }}
-                className="absolute right-0 bottom-12 z-30 w-[190px] sm:right-2 sm:bottom-64 sm:w-[220px]"
+                className="absolute bottom-12 left-0 z-10 w-[190px] sm:right-2 sm:bottom-64 sm:w-[220px] md:left-105 md:z-30 lg:left-55"
               >
-                <LearningProgressBadge progress={55} size="md" />
+                <LearningProgressBadge progress={55} size="sm" />
               </motion.div>
             </div>
           </motion.div>
         </div>
 
         {/* ================= ROW 2: CREATE & MANAGE COURSES EASILY ================= */}
-        <div className="mt-20 grid grid-cols-1 items-center gap-12 sm:mt-36 lg:mt-20 lg:grid-cols-12 lg:gap-16">
+        <div className="mt-8 grid grid-cols-1 items-center gap-12 sm:mt-20 md:mt-12 lg:grid-cols-12 lg:gap-16">
           {/* Left Visual Stage (Instructor + Badges) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -160,14 +166,14 @@ export function AboutSection() {
             transition={{ duration: 0.6 }}
             className="relative order-2 flex items-center justify-center lg:order-1 lg:col-span-6"
           >
-            <div className="relative h-[520px] w-full max-w-[580px] sm:h-[600px] lg:h-[640px]">
+            <div className="relative h-[400px] w-full max-w-[580px] sm:h-[600px] lg:h-[640px]">
               {/* Lime 3D Coil Behind Instructor (Mid-Right) */}
               <FloatingShape
                 src="/assets/images/shape-helix-full-left-lime.png"
                 alt="3D lime helix"
                 width={180}
                 height={220}
-                className="pointer-events-none absolute top-24 right-4 z-40 w-28 sm:top-44 sm:right-24 sm:w-36"
+                className="pointer-events-none absolute top-50 right-0 z-40 w-28 sm:top-44 sm:right-24 sm:w-36 lg:top-55 lg:right-10"
                 imageClassName="h-auto w-full object-contain"
                 floatY={8}
                 floatRotate={-2}
@@ -180,7 +186,7 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="absolute top-4 left-8 z-20 w-[190px] rounded-[16px] bg-[#003BE2] p-4 text-white shadow-[0_16px_32px_rgba(0,59,226,0.25)] sm:top-12 sm:w-[220px]"
+                className="xs:left-6 xs:w-[190px] xs:p-4 absolute top-4 right-1 z-20 w-[170px] rounded-[16px] bg-[#003BE2] p-3 text-white shadow-[0_16px_32px_rgba(0,59,226,0.25)] sm:top-12 sm:left-8 sm:w-[220px]"
               >
                 <div>
                   <p className="font-sans text-xs font-medium text-[#F5F5F6] sm:text-sm">
@@ -189,7 +195,7 @@ export function AboutSection() {
                   <p className="font-sans text-[10px] text-[#F5F5F6]/80">July 1-28</p>
                 </div>
                 <div className="mt-2 flex items-center justify-between">
-                  <span className="font-heading text-xl font-semibold tracking-[-0.01em] text-[#F5F5F6] sm:text-2xl">
+                  <span className="font-heading xs:text-xl text-lg font-semibold tracking-[-0.01em] text-[#F5F5F6] sm:text-2xl">
                     $120.29
                   </span>
                   <span className="rounded-full bg-[#CBFC01] px-2 py-0.5 font-sans text-[10px] font-medium text-[#242528]">
@@ -207,13 +213,13 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="absolute top-44 left-8 z-20 w-[130px] rounded-[16px] bg-[#003BE2] p-3.5 text-white shadow-[0_16px_32px_rgba(0,59,226,0.25)] sm:top-48 sm:w-[134px]"
+                className="xs:left-6 xs:w-[130px] xs:p-3.5 absolute top-30 left-1 z-20 w-[120px] rounded-[16px] bg-[#003BE2] p-3 text-white shadow-[0_16px_32px_rgba(0,59,226,0.25)] sm:top-48 sm:left-8 sm:w-[134px]"
               >
                 <p className="font-sans text-xs font-medium text-[#F5F5F6] sm:text-sm">
                   Year to Date
                 </p>
                 <p className="font-sans text-[10px] text-[#F5F5F6]/80">2023</p>
-                <p className="font-heading mt-1 text-base font-semibold tracking-[-0.01em] text-[#F5F5F6] sm:text-lg">
+                <p className="font-heading xs:text-base mt-1 text-sm font-semibold tracking-[-0.01em] text-[#F5F5F6] sm:text-lg">
                   $1,200.38
                 </p>
                 <div className="mt-1.5 inline-block rounded-full bg-[#CBFC01] px-2 py-0.5 font-sans text-[10px] font-medium text-[#242528]">
@@ -222,13 +228,13 @@ export function AboutSection() {
               </motion.div>
 
               {/* Center Instructor Woman (Enlarged Hero Figure) */}
-              <div className="pointer-events-none absolute right-0 bottom-0 left-6 z-20 flex justify-center sm:left-10">
+              <div className="pointer-events-none absolute right-0 bottom-0 left-2 z-20 flex justify-center sm:left-10">
                 <Image
                   src="/assets/images/about-instructor.png"
                   alt="Instructor creator holding tablet"
                   width={520}
                   height={710}
-                  className="h-auto max-h-[520px] w-[350px] object-contain drop-shadow-[0_25px_40px_rgba(0,0,0,0.15)] sm:max-h-[600px] sm:w-[450px] lg:max-h-[640px] lg:w-[480px]"
+                  className="xs:w-[310px] h-auto max-h-[480px] w-[270px] object-contain drop-shadow-[0_25px_40px_rgba(0,0,0,0.15)] sm:max-h-[600px] sm:w-[450px] lg:max-h-[640px] lg:w-[480px]"
                 />
               </div>
 
@@ -253,12 +259,12 @@ export function AboutSection() {
             transition={{ duration: 0.6 }}
             className="order-1 flex flex-col items-start lg:order-2 lg:col-span-6"
           >
-            <h2 className="font-heading text-3xl font-semibold tracking-[-0.01em] text-[#242528] sm:text-4xl md:text-[44px] md:leading-[1.2]">
+            <h2 className="font-heading xs:text-3xl text-2xl font-semibold tracking-[-0.01em] text-[#242528] sm:text-4xl md:text-[44px] md:leading-[1.2]">
               Create & Manage
               <br />
               Courses Easily.
             </h2>
-            <p className="mt-6 max-w-xl font-sans text-base leading-[160%] font-bold text-[#242528] sm:text-lg">
+            <p className="mt-4 max-w-xl font-sans text-sm leading-[160%] font-medium text-[#242528] sm:mt-6 sm:text-base sm:font-bold md:text-lg">
               ByteSpace supports individuals or entities in the creation, publication, and
               administration of educational courses.
             </p>

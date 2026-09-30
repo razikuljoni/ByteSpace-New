@@ -29,7 +29,7 @@ export function CreatorHero({ creator, totalCourses }: CreatorHeroProps) {
       <Navbar />
 
       {/* 3. Hero Creator Info Container */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-32 pb-16 sm:pt-36 sm:pb-20 lg:px-8 lg:pt-40 lg:pb-24">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 pt-28 pb-14 sm:px-6 sm:pt-36 sm:pb-20 lg:px-8 lg:pt-40 lg:pb-24">
         {/* Creator Identity: Avatar + Name + Badge + Role */}
         <div className="flex items-start gap-4 sm:gap-5">
           {/* Avatar with warm squircle frame */}
