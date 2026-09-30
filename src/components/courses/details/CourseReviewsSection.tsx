@@ -127,6 +127,7 @@ export function CourseReviewsSection({ course }: CourseReviewsSectionProps) {
                         src={review.avatar}
                         alt={review.author}
                         fill
+                        sizes="40px"
                         className="object-cover"
                       />
                     </div>

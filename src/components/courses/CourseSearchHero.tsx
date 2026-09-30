@@ -36,6 +36,7 @@ export function CourseSearchHero({
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder="Search"
+              aria-label="Search courses"
               className="w-full rounded-full border-none bg-white py-2.5 pr-4 pl-10 font-sans text-xs text-neutral-900 shadow-md transition-all placeholder:text-neutral-400 focus:ring-2 focus:ring-[#CBFC01] focus:outline-none sm:py-3 sm:pl-11 sm:text-sm"
             />
           </div>

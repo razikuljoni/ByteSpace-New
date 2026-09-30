@@ -16,9 +16,32 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
   const course = getCourseDetailById(id);
+  const title = `${course.title} - ByteSpace`;
+  const description = course.subtitle;
+
   return {
-    title: `${course.title} - ByteSpace`,
-    description: course.subtitle,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      url: `/courses/${id}`,
+      images: [
+        {
+          url: course.videoThumbnail,
+          width: 1280,
+          height: 720,
+          alt: course.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [course.videoThumbnail],
+    },
   };
 }
 

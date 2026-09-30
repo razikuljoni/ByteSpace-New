@@ -122,7 +122,7 @@ export function AboutSection() {
 
               {/* Background CourseCard (Top-Left) */}
               <div className="absolute top-2 left-0 z-10 w-[260px] drop-shadow-xl sm:top-4 sm:left-0 sm:w-[300px] md:w-[330px]">
-                <CourseCard course={figmaCourse} priority />
+                <CourseCard course={figmaCourse} />
               </div>
 
               {/* Foreground Student Holding Laptop (Enlarged Hero Figure) */}
@@ -132,7 +132,6 @@ export function AboutSection() {
                   alt="Student with laptop and headphones"
                   width={600}
                   height={560}
-                  priority
                   className="h-full w-full object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.15)]"
                 />
               </div>
@@ -229,7 +228,6 @@ export function AboutSection() {
                   alt="Instructor creator holding tablet"
                   width={520}
                   height={710}
-                  priority
                   className="h-auto max-h-[520px] w-[350px] object-contain drop-shadow-[0_25px_40px_rgba(0,0,0,0.15)] sm:max-h-[600px] sm:w-[450px] lg:max-h-[640px] lg:w-[480px]"
                 />
               </div>
