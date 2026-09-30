@@ -2,19 +2,9 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
 import { COURSES } from "@/data/courses";
 import { CourseCard } from "@/components/ui/CourseCard";
-
-const HAPPY_STUDENTS_AVATARS = [
-  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
-  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
-  "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
-  "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
-  "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
-];
+import { HappyStudentsBadge } from "@/components/ui/HappyStudentsBadge";
 
 const INSTRUCTOR_BENEFITS = [
   "Share Your Expertise",
@@ -252,38 +242,9 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.35 }}
-                className="absolute right-0 bottom-6 z-30 w-[235px] rounded-[16px] bg-white p-3.5 shadow-[0_16px_32px_rgba(0,0,0,0.1)] sm:right-2 sm:bottom-38 sm:w-[255px] sm:p-4"
+                className="absolute right-0 bottom-6 z-30 sm:right-2 sm:bottom-38"
               >
-                <div className="flex items-center justify-between">
-                  <p className="font-sans text-sm font-medium text-[#242528] sm:text-base">
-                    Happy Students
-                  </p>
-                  <div className="flex items-center gap-1 font-sans text-[10px] font-bold text-[#242528]">
-                    <span>4.5 (240)</span>
-                    <Star className="h-3.5 w-3.5 fill-[#D4FB20] text-[#D4FB20]" />
-                  </div>
-                </div>
-
-                {/* Overlapping Avatars */}
-                <div className="mt-3 flex items-center -space-x-2.5">
-                  {HAPPY_STUDENTS_AVATARS.map((avatar, idx) => (
-                    <div
-                      key={idx}
-                      className="relative h-7 w-7 shrink-0 overflow-hidden rounded-full sm:h-8 sm:w-8"
-                    >
-                      <Image
-                        src={avatar}
-                        alt="Student"
-                        fill
-                        sizes="32px"
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
-                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#D4FB20] font-sans text-[11px] font-bold text-[#242528] sm:h-8 sm:w-8 sm:text-xs">
-                    2K+
-                  </div>
-                </div>
+                <HappyStudentsBadge layout="stacked" />
               </motion.div>
             </div>
           </motion.div>
