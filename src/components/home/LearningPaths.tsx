@@ -3,34 +3,17 @@
 import { motion } from "framer-motion";
 import { LEARNING_PATHS } from "@/data/learningPaths";
 import { LearningPathCard } from "@/components/ui/LearningPathCard";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function LearningPaths() {
   return (
     <section className="relative w-full bg-white pb-14 sm:pb-18 lg:pb-22">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="font-heading text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl md:text-5xl md:leading-[1.18]"
-          >
-            Explore Diverse Learning Paths at Bytespace
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-body mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-neutral-500 sm:text-base"
-          >
-            At Bytespace, we believe in empowering individuals through knowledge. Our diverse range
-            of courses spans various fields, ensuring there&apos;s something for everyone. Unleash
-            your potential and explore our carefully curated categories.
-          </motion.p>
-        </div>
+        <SectionHeader
+          title="Explore Diverse Learning Paths at Bytespace"
+          subtitle="At Bytespace, we believe in empowering individuals through knowledge. Our diverse range of courses spans various fields, ensuring there's something for everyone. Unleash your potential and explore our carefully curated categories."
+        />
 
         {/* Learning Path Cards Grid */}
         <motion.div

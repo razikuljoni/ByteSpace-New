@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Star } from "lucide-react";
+import { StarRating } from "@/components/ui/StarRating";
 import {
   CourseDetailData,
   DEFAULT_REVIEWS,
@@ -72,11 +73,7 @@ export function CourseReviewsSection({ course }: CourseReviewsSectionProps) {
                 </div>
 
                 {/* Stars Group */}
-                <div className="flex shrink-0 items-center gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-3 w-3 fill-neutral-800 text-neutral-800" />
-                  ))}
-                </div>
+                <StarRating rating={row.stars} maxStars={5} size="xs" variant="dark" />
 
                 {/* Review Count */}
                 <span className="w-8 shrink-0 text-right font-sans text-xs font-medium text-neutral-600">
@@ -146,11 +143,7 @@ export function CourseReviewsSection({ course }: CourseReviewsSectionProps) {
                 </div>
 
                 {/* Stars Rating */}
-                <div className="mt-3 flex items-center gap-1">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-neutral-950 text-neutral-950" />
-                  ))}
-                </div>
+                <StarRating rating={review.rating} size="sm" variant="dark" className="mt-3" />
 
                 {/* Review Text */}
                 <p className="mt-3 font-sans text-xs leading-relaxed text-neutral-600 sm:text-sm">

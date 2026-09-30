@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { TESTIMONIALS } from "@/data/testimonials";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function Testimonials() {
   return (
@@ -38,36 +39,17 @@ export function Testimonials() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* ================= SECTION HEADER (SPLIT ROW) ================= */}
-        <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-12 md:gap-12 lg:gap-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="md:col-span-6"
-          >
-            <h2 className="font-heading text-3xl font-semibold tracking-[-0.01em] text-[#242528] sm:text-4xl md:text-5xl md:leading-[1.18]">
+        <SectionHeader
+          align="split"
+          title={
+            <>
               Discover What Our
               <br />
               Community Is Saying
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="md:col-span-6"
-          >
-            <p className="font-sans text-sm leading-relaxed text-[#4B4C53] sm:text-base sm:leading-[160%]">
-              At ByteSpace, our vibrant community of learners and creators is at the heart of what
-              we do. Hear directly from those who have experienced the transformative journey of
-              learning and creating on our platform. Explore testimonials that reflect the diverse
-              perspectives of enthusiastic learners and accomplished creators.
-            </p>
-          </motion.div>
-        </div>
+            </>
+          }
+          subtitle="At ByteSpace, our vibrant community of learners and creators is at the heart of what we do. Hear directly from those who have experienced the transformative journey of learning and creating on our platform. Explore testimonials that reflect the diverse perspectives of enthusiastic learners and accomplished creators."
+        />
 
         {/* ================= TESTIMONIALS GRID ================= */}
         <motion.div
