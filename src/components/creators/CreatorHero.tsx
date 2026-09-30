@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar";
+import { BlueGridBackground } from "@/components/ui/BlueGridBackground";
 import { CreatorProfile } from "@/data/creators";
 
 interface CreatorHeroProps {
@@ -23,14 +24,8 @@ export function CreatorHero({ creator, totalCourses }: CreatorHeroProps) {
   };
 
   return (
-    <div className="bg-brand relative w-full overflow-hidden text-white">
-      {/* 1. Blueprint Grid Background Overlay */}
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-        <div className="bg-grid-pattern absolute inset-0 opacity-70" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_0%,rgba(40,114,255,0.35),rgba(0,59,226,0))]" />
-      </div>
-
-      {/* 2. Global Navbar */}
+    <BlueGridBackground className="text-white">
+      {/* 1. Global Navbar */}
       <Navbar />
 
       {/* 3. Hero Creator Info Container */}
@@ -92,6 +87,6 @@ export function CreatorHero({ creator, totalCourses }: CreatorHeroProps) {
           </button>
         </div>
       </div>
-    </div>
+    </BlueGridBackground>
   );
 }
