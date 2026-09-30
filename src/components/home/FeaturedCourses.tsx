@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { COURSE_CATEGORIES, COURSES } from "@/data/courses";
 import { CourseCard } from "@/components/ui/CourseCard";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function FeaturedCourses() {
   const [selectedCategory, setSelectedCategory] = useState<string>("Featured");
@@ -18,30 +19,16 @@ export function FeaturedCourses() {
     <section className="relative w-full bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="font-heading text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl md:text-5xl md:leading-[1.18]"
-          >
-            Discover Your Passion,
-            <br />
-            Build Your Skills
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-body mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-neutral-500 sm:text-base"
-          >
-            At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety
-            of courses across different fields, from technology to the arts, and make a difference
-            in your career and life.
-          </motion.p>
-        </div>
+        <SectionHeader
+          title={
+            <>
+              Discover Your Passion,
+              <br />
+              Build Your Skills
+            </>
+          }
+          subtitle="At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life."
+        />
 
         {/* Categories Filter Pills */}
         <motion.div

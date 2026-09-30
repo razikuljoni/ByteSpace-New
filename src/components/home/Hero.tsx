@@ -6,6 +6,7 @@ import { Search } from "lucide-react";
 import { HappyStudentsBadge } from "@/components/ui/HappyStudentsBadge";
 import { LearningProgressBadge } from "@/components/ui/LearningProgressBadge";
 import { BlueGridBackground } from "@/components/ui/BlueGridBackground";
+import { FloatingShape } from "@/components/ui/FloatingShape";
 
 export function Hero() {
   return (
@@ -58,132 +59,102 @@ export function Hero() {
         {/* ================= EDGE ATTACHED 3D SHAPES ================= */}
 
         {/* Top-Left Lime Spiral Coil (Touches Left Edge) */}
-        <motion.div
+        <FloatingShape
+          src="/assets/images/shape-helix-full-left-lime.png"
+          alt="Lime 3D coil"
+          width={260}
+          height={340}
+          className="pointer-events-none absolute top-[2%] -left-6 z-10 w-28 sm:top-[5%] sm:-left-8 sm:w-40 md:-left-10 md:w-56 lg:top-[6%] lg:-left-12 lg:w-68"
+          imageClassName="h-auto w-full drop-shadow-2xl"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="pointer-events-none absolute top-[2%] -left-6 z-10 w-28 sm:top-[5%] sm:-left-8 sm:w-40 md:-left-10 md:w-56 lg:top-[6%] lg:-left-12 lg:w-68"
-        >
-          <motion.div
-            animate={{ y: [0, -10, 0], rotate: [0, 2, 0] }}
-            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-          >
-            <Image
-              src="/assets/images/shape-helix-full-left-lime.png"
-              alt="Lime 3D coil"
-              width={260}
-              height={340}
-              className="h-auto w-full drop-shadow-2xl"
-              priority
-            />
-          </motion.div>
-        </motion.div>
+          floatY={-10}
+          floatRotate={2}
+          duration={6}
+          priority
+        />
 
         {/* Mid-Left Small White Helix */}
-        <motion.div
+        <FloatingShape
+          src="/assets/images/shape-helix-left-white.png"
+          alt="White 3D spiral"
+          width={130}
+          height={170}
+          className="pointer-events-none absolute top-[36%] left-[8%] z-10 w-14 sm:top-[38%] sm:left-[11%] sm:w-20 md:top-[40%] md:left-[13%] md:w-28 lg:left-[14%] lg:w-32"
+          imageClassName="h-auto w-full drop-shadow-xl"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.25 }}
-          className="pointer-events-none absolute top-[36%] left-[8%] z-10 w-14 sm:top-[38%] sm:left-[11%] sm:w-20 md:top-[40%] md:left-[13%] md:w-28 lg:left-[14%] lg:w-32"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0], rotate: [0, -3, 0] }}
-            transition={{ repeat: Infinity, duration: 4.8, ease: "easeInOut" }}
-          >
-            <Image
-              src="/assets/images/shape-helix-left-white.png"
-              alt="White 3D spiral"
-              width={130}
-              height={170}
-              className="h-auto w-full drop-shadow-xl"
-            />
-          </motion.div>
-        </motion.div>
+          floatY={8}
+          floatRotate={-3}
+          duration={4.8}
+        />
 
         {/* Bottom-Left White Torus / Donut (Touches Bottom-Left) */}
-        <motion.div
+        <FloatingShape
+          src="/assets/images/shape-torus-white.png"
+          alt="White 3D torus"
+          width={300}
+          height={300}
+          className="pointer-events-none absolute -bottom-4 left-0 z-10 w-32 sm:bottom-2 sm:left-[2%] sm:w-48 md:bottom-6 md:left-[3%] md:w-64 lg:bottom-8 lg:left-[4%] lg:w-76"
+          imageClassName="h-auto w-full drop-shadow-2xl"
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="pointer-events-none absolute -bottom-4 left-0 z-10 w-32 sm:bottom-2 sm:left-[2%] sm:w-48 md:bottom-6 md:left-[3%] md:w-64 lg:bottom-8 lg:left-[4%] lg:w-76"
-        >
-          <motion.div
-            animate={{ y: [0, -8, 0], rotate: [0, 4, 0] }}
-            transition={{ repeat: Infinity, duration: 6.5, ease: "easeInOut" }}
-          >
-            <Image
-              src="/assets/images/shape-torus-white.png"
-              alt="White 3D torus"
-              width={300}
-              height={300}
-              className="h-auto w-full drop-shadow-2xl"
-            />
-          </motion.div>
-        </motion.div>
+          floatY={-8}
+          floatRotate={4}
+          duration={6.5}
+        />
 
         {/* Top-Right Lime Cylinder (Touches Right Edge) */}
-        <motion.div
+        <FloatingShape
+          src="/assets/images/shape-cylinder-lime.png"
+          alt="Lime 3D cylinder"
+          width={260}
+          height={360}
+          className="pointer-events-none absolute -top-4 -right-8 z-10 w-28 sm:-top-6 sm:-right-10 sm:w-40 md:-top-8 md:-right-12 md:w-56 lg:-top-10 lg:-right-14 lg:w-68"
+          imageClassName="h-auto w-full drop-shadow-2xl"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="pointer-events-none absolute -top-4 -right-8 z-10 w-28 sm:-top-6 sm:-right-10 sm:w-40 md:-top-8 md:-right-12 md:w-56 lg:-top-10 lg:-right-14 lg:w-68"
-        >
-          <motion.div
-            animate={{ y: [0, -12, 0], rotate: [0, -2, 0] }}
-            transition={{ repeat: Infinity, duration: 5.6, ease: "easeInOut" }}
-          >
-            <Image
-              src="/assets/images/shape-cylinder-lime.png"
-              alt="Lime 3D cylinder"
-              width={260}
-              height={360}
-              className="h-auto w-full drop-shadow-2xl"
-              priority
-            />
-          </motion.div>
-        </motion.div>
+          floatY={-12}
+          floatRotate={-2}
+          duration={5.6}
+          priority
+        />
 
         {/* Mid-Right White Pyramid */}
-        <motion.div
+        <FloatingShape
+          src="/assets/images/shape-pyramid-white.png"
+          alt="White 3D pyramid"
+          width={150}
+          height={150}
+          className="pointer-events-none absolute top-[36%] right-[8%] z-10 w-16 sm:top-[38%] sm:right-[11%] sm:w-24 md:top-[40%] md:right-[13%] md:w-32 lg:right-[14%] lg:w-36"
+          imageClassName="h-auto w-full drop-shadow-xl"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="pointer-events-none absolute top-[36%] right-[8%] z-10 w-16 sm:top-[38%] sm:right-[11%] sm:w-24 md:top-[40%] md:right-[13%] md:w-32 lg:right-[14%] lg:w-36"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0], rotate: [0, 3, 0] }}
-            transition={{ repeat: Infinity, duration: 5.2, ease: "easeInOut" }}
-          >
-            <Image
-              src="/assets/images/shape-pyramid-white.png"
-              alt="White 3D pyramid"
-              width={150}
-              height={150}
-              className="h-auto w-full drop-shadow-xl"
-            />
-          </motion.div>
-        </motion.div>
+          floatY={10}
+          floatRotate={3}
+          duration={5.2}
+        />
 
         {/* Bottom-Right White Helix (Touches Right Edge) */}
-        <motion.div
+        <FloatingShape
+          src="/assets/images/shape-helix-right-white.png"
+          alt="White 3D coil"
+          width={240}
+          height={300}
+          className="pointer-events-none absolute -right-4 bottom-4 z-10 w-28 sm:-right-6 sm:bottom-6 sm:w-40 md:-right-8 md:bottom-8 md:w-52 lg:right-10 lg:bottom-10 lg:w-64"
+          imageClassName="h-auto w-full drop-shadow-2xl"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="pointer-events-none absolute -right-4 bottom-4 z-10 w-28 sm:-right-6 sm:bottom-6 sm:w-40 md:-right-8 md:bottom-8 md:w-52 lg:right-10 lg:bottom-10 lg:w-64"
-        >
-          <motion.div
-            animate={{ y: [0, -9, 0], rotate: [0, -3, 0] }}
-            transition={{ repeat: Infinity, duration: 6.2, ease: "easeInOut" }}
-          >
-            <Image
-              src="/assets/images/shape-helix-right-white.png"
-              alt="White 3D coil"
-              width={240}
-              height={300}
-              className="h-auto w-full drop-shadow-2xl"
-            />
-          </motion.div>
-        </motion.div>
+          floatY={-9}
+          floatRotate={-3}
+          duration={6.2}
+        />
 
         {/* ================= CENTER LIME ARCH BACKDROP ================= */}
         {/* Top of lime arch matches student head height, bottom sits at frame edge */}

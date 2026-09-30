@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Star, BarChart3 } from "lucide-react";
 import { HappyStudentsBadge } from "@/components/ui/HappyStudentsBadge";
+import { AvatarStack } from "@/components/ui/AvatarStack";
 
 const CARD_STUDENT_AVATARS = [
   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
@@ -55,19 +56,13 @@ export function AuthVisualComposition() {
               </span>
 
               {/* Avatar stack */}
-              <div className="flex items-center -space-x-1.5">
-                {CARD_STUDENT_AVATARS.slice(0, 3).map((avatar, idx) => (
-                  <div
-                    key={idx}
-                    className="ring-1.5 relative h-5 w-5 overflow-hidden rounded-full ring-white"
-                  >
-                    <Image src={avatar} alt="Student avatar" fill className="object-cover" />
-                  </div>
-                ))}
-                <div className="ring-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-neutral-950 text-[8px] font-bold text-white ring-white">
-                  26+
-                </div>
-              </div>
+              <AvatarStack
+                avatars={CARD_STUDENT_AVATARS}
+                max={3}
+                countText="26+"
+                size="xs"
+                variant="dark"
+              />
             </div>
 
             <div className="mt-3 flex items-baseline gap-1 border-t border-neutral-100 pt-2">
@@ -122,19 +117,13 @@ export function AuthVisualComposition() {
               </span>
 
               {/* Avatar stack */}
-              <div className="flex items-center -space-x-1.5">
-                {CARD_STUDENT_AVATARS.map((avatar, idx) => (
-                  <div
-                    key={idx}
-                    className="ring-1.5 relative h-5 w-5 overflow-hidden rounded-full ring-white sm:h-6 sm:w-6"
-                  >
-                    <Image src={avatar} alt="Student avatar" fill className="object-cover" />
-                  </div>
-                ))}
-                <div className="ring-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-neutral-950 text-[9px] font-bold text-white ring-white sm:h-6 sm:w-6">
-                  26+
-                </div>
-              </div>
+              <AvatarStack
+                avatars={CARD_STUDENT_AVATARS}
+                max={4}
+                countText="26+"
+                size="sm"
+                variant="dark"
+              />
             </div>
 
             <div className="mt-3 flex items-baseline gap-1 border-t border-neutral-100 pt-2">

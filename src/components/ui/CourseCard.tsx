@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Star } from "lucide-react";
 import { Course } from "@/types/course";
 import { getCreatorSlug } from "@/data/creators";
+import { AvatarStack } from "@/components/ui/AvatarStack";
 
 interface CourseCardProps {
   course: Course;
@@ -30,14 +31,14 @@ export function CourseCard({ course, className = "", priority = false }: CourseC
           />
 
           {/* Bottom Glass Pills Overlay */}
-          <div className="absolute inset-x-3 bottom-3 flex items-center gap-2 sm:gap-3">
-            <span className="flex h-[26px] items-center justify-center rounded-[24px] bg-[#F6F6F6]/60 px-3 py-1.5 font-sans text-xs font-medium text-[#4F4F4F] backdrop-blur-[4px]">
+          <div className="absolute inset-x-2.5 bottom-2.5 flex flex-wrap items-center gap-1.5 sm:inset-x-3 sm:bottom-3 sm:gap-2">
+            <span className="inline-flex h-[22px] items-center justify-center rounded-full bg-[#F6F6F6]/75 px-2 font-sans text-[10px] font-medium whitespace-nowrap text-[#4F4F4F] shadow-xs backdrop-blur-[6px] sm:h-[26px] sm:px-2.5 sm:text-xs">
               {course.lessonsCount} Lessons
             </span>
-            <span className="flex h-[26px] items-center justify-center rounded-[24px] bg-[#F6F6F6]/60 px-3 py-1.5 font-sans text-xs font-medium text-[#4F4F4F] backdrop-blur-[4px]">
+            <span className="inline-flex h-[22px] items-center justify-center rounded-full bg-[#F6F6F6]/75 px-2 font-sans text-[10px] font-medium whitespace-nowrap text-[#4F4F4F] shadow-xs backdrop-blur-[6px] sm:h-[26px] sm:px-2.5 sm:text-xs">
               {course.duration}
             </span>
-            <span className="flex h-[26px] items-center justify-center rounded-[24px] bg-[#F6F6F6]/60 px-3 py-1.5 font-sans text-xs font-medium text-[#4F4F4F] backdrop-blur-[4px]">
+            <span className="inline-flex h-[22px] items-center justify-center rounded-full bg-[#F6F6F6]/75 px-2 font-sans text-[10px] font-medium whitespace-nowrap text-[#4F4F4F] shadow-xs backdrop-blur-[6px] sm:h-[26px] sm:px-2.5 sm:text-xs">
               {course.commentsCount} Comments
             </span>
           </div>
@@ -95,25 +96,13 @@ export function CourseCard({ course, className = "", priority = false }: CourseC
             </div>
 
             {/* Avatars Stack */}
-            <div className="flex items-center -space-x-2">
-              {course.studentAvatars.slice(0, 4).map((avatarUrl, idx) => (
-                <div
-                  key={idx}
-                  className="relative h-[32px] w-[32px] shrink-0 overflow-hidden rounded-full"
-                >
-                  <Image
-                    src={avatarUrl}
-                    alt="Student enrolled"
-                    fill
-                    sizes="32px"
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-              <div className="flex h-[32px] w-[32px] shrink-0 items-center justify-center rounded-full bg-[#D4FB20] font-sans text-[12px] font-medium text-[#242528]">
-                {course.studentCount}
-              </div>
-            </div>
+            <AvatarStack
+              avatars={course.studentAvatars}
+              max={4}
+              countText={course.studentCount}
+              size="md"
+              variant="lime"
+            />
           </div>
 
           {/* Price */}
@@ -121,7 +110,7 @@ export function CourseCard({ course, className = "", priority = false }: CourseC
             <span className="font-heading text-[20px] font-semibold tracking-[-0.01em] text-[#003BE2]">
               ${course.price}
             </span>
-            <span className="font-sans text-[12px] leading-[160%] text-[#4F4F4F]">
+            <span className="pb-1 font-sans text-[12px] leading-[160%] text-[#4F4F4F]">
               /{course.pricePeriod || "lifetime"}
             </span>
           </div>
