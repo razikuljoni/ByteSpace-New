@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { BlueGridBackground } from "@/components/ui/BlueGridBackground";
+import { FloatingShape } from "@/components/ui/FloatingShape";
 
 export function CreatorCTA() {
   return (
@@ -12,97 +12,89 @@ export function CreatorCTA() {
         {/* ================= 3D PERIMETER SHAPES (FLUSH CROPPED ASSETS) ================= */}
 
         {/* 1. Top-Left Cropped Lime Helix */}
-        <div className="pointer-events-none absolute -top-36 left-0 z-10 w-24 sm:w-36 md:w-44 lg:w-56">
-          <Image
-            src="/assets/images/cta-shape-helix-left-crop-lime.png"
-            alt="Decorative 3D lime helix"
-            width={240}
-            height={300}
-            className="h-auto w-full object-contain drop-shadow-2xl"
-          />
-        </div>
+        <FloatingShape
+          src="/assets/images/cta-shape-helix-left-crop-lime.png"
+          alt="Decorative 3D lime helix"
+          width={240}
+          height={300}
+          className="pointer-events-none absolute -top-36 left-0 z-10 w-24 sm:w-36 md:w-44 lg:w-56"
+          imageClassName="h-auto w-full object-contain drop-shadow-2xl"
+          floatY={0}
+        />
 
         {/* 2. Mid-Left Small White Helix / Zigzag */}
-        <motion.div
-          animate={{ y: [0, 8, 0], rotate: [0, -3, 0] }}
-          transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 0.5 }}
+        <FloatingShape
+          src="/assets/images/shape-helix-left-white.png"
+          alt="Decorative white zigzag"
+          width={180}
+          height={200}
           className="pointer-events-none absolute -top-28 left-[11%] z-10 w-14 sm:left-[13%] sm:w-20 md:w-28 lg:left-[14%]"
-        >
-          <Image
-            src="/assets/images/shape-helix-left-white.png"
-            alt="Decorative white zigzag"
-            width={180}
-            height={200}
-            className="h-auto w-full object-contain drop-shadow-xl"
-          />
-        </motion.div>
+          floatY={8}
+          floatRotate={-3}
+          duration={7}
+          floatDelay={0.5}
+        />
 
         {/* 3. Bottom-Left White Cone */}
-        <motion.div
-          animate={{ y: [0, -6, 0] }}
-          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
+        <FloatingShape
+          src="/assets/images/cta-shape-cone-white.png"
+          alt="Decorative white cone"
+          width={140}
+          height={180}
           className="pointer-events-none absolute bottom-4 left-0 z-10 w-14 sm:bottom-6 sm:left-0 sm:w-20 md:w-28 lg:w-32"
-        >
-          <Image
-            src="/assets/images/cta-shape-cone-white.png"
-            alt="Decorative white cone"
-            width={140}
-            height={180}
-            className="h-auto w-full object-contain drop-shadow-xl"
-          />
-        </motion.div>
+          floatY={-6}
+          duration={5}
+          floatDelay={1}
+        />
 
         {/* 4. Bottom-Left Cropped Lime Torus Ring */}
-        <div className="pointer-events-none absolute -bottom-36 left-[4%] z-10 w-28 sm:left-[6%] sm:w-40 md:w-48 lg:w-56">
-          <Image
-            src="/assets/images/cta-shape-torus-crop-lime.png"
-            alt="Decorative lime torus ring"
-            width={240}
-            height={240}
-            className="h-auto w-full object-contain drop-shadow-2xl"
-          />
-        </div>
+        <FloatingShape
+          src="/assets/images/cta-shape-torus-crop-lime.png"
+          alt="Decorative lime torus ring"
+          width={240}
+          height={240}
+          className="pointer-events-none absolute -bottom-36 left-[4%] z-10 w-28 sm:left-[6%] sm:w-40 md:w-48 lg:w-56"
+          imageClassName="h-auto w-full object-contain drop-shadow-2xl"
+          floatY={0}
+        />
 
         {/* 5. Top-Right Lime Pyramid */}
-        <motion.div
-          animate={{ y: [0, -8, 0], rotate: [0, -2, 0] }}
-          transition={{ repeat: Infinity, duration: 6.5, ease: "easeInOut", delay: 0.3 }}
+        <FloatingShape
+          src="/assets/images/cta-shape-pyramid-lime.png"
+          alt="Decorative lime pyramid"
+          width={160}
+          height={160}
           className="pointer-events-none absolute top-4 right-[11%] z-10 w-16 sm:-top-30 sm:right-[14%] sm:w-24 md:w-32 lg:right-[15%] lg:w-36"
-        >
-          <Image
-            src="/assets/images/cta-shape-pyramid-lime.png"
-            alt="Decorative lime pyramid"
-            width={160}
-            height={160}
-            className="h-auto w-full object-contain drop-shadow-2xl"
-          />
-        </motion.div>
+          imageClassName="h-auto w-full object-contain drop-shadow-2xl"
+          floatY={-8}
+          floatRotate={-2}
+          duration={6.5}
+          floatDelay={0.3}
+        />
 
         {/* 6. Top-Right Cropped White Cylinder */}
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 0.6 }}
+        <FloatingShape
+          src="/assets/images/cta-shape-cylinder-white.png"
+          alt="Decorative white cylinder"
+          width={240}
+          height={320}
           className="pointer-events-none absolute -top-14 right-0 z-10 w-24 sm:w-36 md:w-44 lg:w-56"
-        >
-          <Image
-            src="/assets/images/cta-shape-cylinder-white.png"
-            alt="Decorative white cylinder"
-            width={240}
-            height={320}
-            className="h-auto w-full object-contain drop-shadow-2xl"
-          />
-        </motion.div>
+          imageClassName="h-auto w-full object-contain drop-shadow-2xl"
+          floatY={6}
+          duration={7}
+          floatDelay={0.6}
+        />
 
         {/* 7. Bottom-Right Cropped Lime Helix */}
-        <div className="pointer-events-none absolute right-0 -bottom-36 z-10 w-24 sm:w-36 md:w-44 lg:w-56">
-          <Image
-            src="/assets/images/cta-shape-helix-right-crop-lime.png"
-            alt="Decorative lime helix"
-            width={240}
-            height={300}
-            className="h-auto w-full object-contain drop-shadow-2xl"
-          />
-        </div>
+        <FloatingShape
+          src="/assets/images/cta-shape-helix-right-crop-lime.png"
+          alt="Decorative lime helix"
+          width={240}
+          height={300}
+          className="pointer-events-none absolute right-0 -bottom-36 z-10 w-24 sm:w-36 md:w-44 lg:w-56"
+          imageClassName="h-auto w-full object-contain drop-shadow-2xl"
+          floatY={0}
+        />
 
         {/* ================= CENTER CTA CONTENT ================= */}
         <div className="relative z-20 mx-auto max-w-4xl px-6 text-center lg:px-8">
